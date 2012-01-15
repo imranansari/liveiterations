@@ -35,3 +35,5 @@ gem "guard-rspec", ">= 0.4.3", :group => :development
 gem "bson_ext", ">= 1.3.1"
 gem "mongoid", ">= 2.3.3"
 gem "devise", ">= 1.5.0"
+
+gem 'requirejs-rails'
