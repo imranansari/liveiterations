@@ -4,16 +4,15 @@ define([
     'backbone',
     'handlebars',
     'text!templates/storyActivity.html'
-], function ($, _, Backbone, handlebars,htmlTpl) {
+], function ($, _, Backbone, handlebars, htmlTpl) {
     var StoryActivityView = Backbone.View.extend({
         //template: _.template($("#form1-template").html()),
-               tagName: "li",
-         className: 'story',
+        //tagName:"div",
 
         initialize:function () {
             _.bindAll(this, 'render');
             this.model.bind('change', this.render);
-            this.template =  Handlebars.compile(htmlTpl);
+            this.template = Handlebars.compile(htmlTpl);
         },
 
         render:function () {

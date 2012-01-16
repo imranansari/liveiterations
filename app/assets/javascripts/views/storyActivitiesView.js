@@ -7,8 +7,7 @@ define([
     'text!templates/storyActivity.html'
 ], function ($, _, Backbone, handlebars, StoryActivityView, htmlTpl) {
     var StoryActivitiesView = Backbone.View.extend({
-        tagName:"ul",
-        className:"storyActivities",
+        tagName:"div",
         initialize:function (options) {
             // Bind on initialization rather than rendering. This might seem
             // counter-intuitive because we are effectively "rendering" this
@@ -21,7 +20,7 @@ define([
                     model:model
                 });
 
-                $(this.el).prepend(storyActivityView.render().el);
+                $(this.el).append(storyActivityView.render().el);
             }, this);
         },
         render:function () {

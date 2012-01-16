@@ -1,5 +1,6 @@
 Liveiterations::Application.routes.draw do
   get "storymap/index"
+  get "storymap/test"
 
   #get \"users\/show\"
 
