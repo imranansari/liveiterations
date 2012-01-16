@@ -5,24 +5,23 @@
 // the compiled file.
 //
 
-alert('a');
-
 require.config({
   paths: {
     jquery: 'libs/jquery/jquery-min',
     underscore: 'libs/underscore/underscore-min',
     backbone: 'libs/backbone/backbone-optamd3-min',
+    handlebars: 'libs/handlebars/handlebars.1.0.0.beta.3',
     text: 'libs/require/text'
   }
 
 });
 
-/*require(['views/test'], function(AppView){
+require(['views/app'], function(AppView){
   var app_view = new AppView;
-});*/
-
-
-
-require(['views/test'], function(){
-
 });
+
+
+
+/*require(['views/test'], function(){
+
+});*/

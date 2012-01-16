@@ -1,4 +1,6 @@
 Liveiterations::Application.routes.draw do
+  get "storymap/index"
+
   #get \"users\/show\"
 
   root :to => "home#index"
@@ -65,6 +67,6 @@ Liveiterations::Application.routes.draw do
   # match ':controller(/:action(/:id(.:format)))'
 
 
-  get "storymap/display"
+  #get "storymap/display"
 
 end
