@@ -1,7 +1,19 @@
 <div class="storyContainer span1">
     <div class="story">
-        <div><button class="addUserTask">Add User Task</button></div>
-        Story Name: {{ storyName }}
-        <div>Assigned: {{ assigned }}</div>
+        <div class="type">
+            <div class="storyTitle">Test1{{ storyName }}</div>
+            <!--<span class="chat">&nbsp;&nbsp;&nbsp;&nbsp;</span>-->
+            <i class="plus addUserTask"></i>
+            <i class="edit"></i>
+        </div>
+
+        <div class="storyDesc">{{ storyDesc }}</div>
+
+<!--        <div class="bottom-panel">
+            <div id="assigned"><i class="user"></i> {{ assigned }}
+                <span class="chat">&nbsp;&nbsp;&nbsp;&nbsp;</span>
+            </div>
+        </div>-->
+
     </div>
 </div>

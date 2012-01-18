@@ -1,0 +1,133 @@
+// Place all the styles related to the storymap controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+.storyActivities {
+  list-style: none;
+  white-space: nowrap;
+  width: 200%;
+  }
+
+  .storyActivities li{
+      //border-right: solid 1px #ffffff;
+          display: inline-block;
+          padding: 10px;
+          height: 400px;
+          //padding-right: 10px;
+          border: dashed 1px gray;
+  }
+
+.story {
+	//padding:50px;
+    float:left;
+    padding:10px 5px;
+    width: 95%;
+	margin:auto;
+	position:relative;
+	//background-color:#fe6;
+	//background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#fe6), to(#f6ef97), color-stop(.6,#f5da41));
+	//background:-moz-linear-gradient(top, #fe6, #f5da41, #f6ef97);
+
+  background-color: #f5f5f5;
+
+	box-shadow:0 0 5px rgba(0,0,0,.2);
+	-webkit-box-shadow:0 0 5px rgba(0,0,0,.2);
+	-moz-box-shadow:0 0 5px rgba(0,0,0,.2);
+}
+
+.story .type{
+   //background-color: #ccccff;
+   background-color: #0394d9;
+   text-align: right;
+
+   position:absolute;
+   top: -2px;
+   left: -0.2px;
+   width: 100%;
+   min-height: 5px;
+}
+
+.story:before {
+	content:'';
+	display:block;
+	width:90%;
+	height:20%;
+	position:absolute;
+	left:10px;
+	bottom:3px;
+	background-color:rgba(0,0,0,.5);
+	-o-transform:rotate(-3deg);
+	-webkit-transform:rotate(-3deg);
+	-moz-transform:rotate(-3deg);
+	box-shadow:0 0 10px #000;
+	-webkit-box-shadow:0 0 10px #000;
+	-moz-box-shadow:0 0 10px #000;
+	opacity:1;
+	z-index:-1;
+}
+
+.story:after {
+	content:'';
+	display:block;
+	width:90%;
+	height:20%;
+	position:absolute;
+	right:10px;
+	bottom:3px;
+	background-color:rgba(0,0,0,.5);
+	-o-transform:rotate(3deg);
+	-webkit-transform:rotate(3deg);
+	-moz-transform:rotate(3deg);
+	box-shadow:0 0 10px #000;
+	-webkit-box-shadow:0 0 10px #000;
+	-moz-box-shadow:0 0 10px #000;
+	opacity:1;
+	z-index:-1;
+}
+
+.container{
+  width: 150%;
+}
+
+.storyContainer{
+    //height: 300px;
+    min-height: 600px;
+    border-right: 1px dashed;
+    width: 250px;
+}
+
+.story .storyTitle {
+  font-weight: bolder;
+  display: inline-block;
+  text-align: left;
+  position:relative;
+  float:left;
+  color: white;
+}
+
+.story .storyDesc{
+  margin-top: 8px;
+}
+
+.chat{
+   background-image: url(/assets/chat4.png);
+   background-repeat: no-repeat;
+   background-size: 13px 13px;
+}
+
+.assigned{
+   float:right;
+   text-align: right;
+}
+
+.bottom-panel {
+  position: relative;
+  top: 10px;
+}
+
+
+i {
+  background-image: url(/assets/glyphicons-halflings-sprite.png);
+}
