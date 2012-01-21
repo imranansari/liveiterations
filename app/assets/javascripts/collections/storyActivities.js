@@ -7,7 +7,9 @@ define([
     var StoryActivities = Backbone.Collection.extend({
 
         // Reference to this collection's model.
-        model:StoryActivity
+        model:StoryActivity,
+
+        url:'/storymap/activities'
 
     });
 

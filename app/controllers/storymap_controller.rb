@@ -17,4 +17,9 @@ class StorymapController < ApplicationController
     end
   end
 
+  def activity
+
+
+  end
+
 end
