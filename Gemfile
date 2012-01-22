@@ -46,5 +46,5 @@ gem "thin"
 gem "heroku"
 
 group :production do
-  gem 'therubyracer-heroku'
+  gem 'therubyracer-heroku' ">= 0.9.8"
 end
