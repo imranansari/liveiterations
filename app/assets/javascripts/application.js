@@ -1,6 +1,7 @@
 require.config({
   paths: {
     jquery: 'libs/jquery/jquery-min',
+    rails: 'libs/jquery/rails',
     underscore: 'libs/underscore/underscore-min',
     backbone: 'libs/backbone/backbone-optamd3-min',
     modelbinding: 'libs/backbone/backbone.modelbinding',
@@ -23,6 +24,7 @@ require.config({
 });
 
 require(["order!jquery",
+    "order!rails",
     "order!backbone",
     "order!modelbinding",
     "order!/assets/libs/twitter/bootstrap-dropdown.js",

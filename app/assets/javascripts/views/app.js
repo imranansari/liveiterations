@@ -12,7 +12,7 @@ define([
 
     $(document).ready(function () {
 
-        //$("#topmenu").html(menuHtml);
+        $("#topmenu").html(menuHtml);
 
 
         $(".addUserTask").live('click', function () {

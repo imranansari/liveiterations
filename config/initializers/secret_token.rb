@@ -4,4 +4,4 @@
 # If you change this key, all old signed cookies will become invalid!
 # Make sure the secret is at least 30 characters and all random,
 # no regular words or you'll be exposed to dictionary attacks.
-Liveiterations::Application.config.secret_token = '2f6da3a358fe091a47c52a8eeb4dc1e40bc073159f54ffcfcaeb696af2e7d3502b302fd1440b4e3423ccf639c98e2e42595f68e206641e50b1917a127140e198'
+Liveiterations::Application.config.secret_token = '591a32a3827c15b1165a6cc2fc09336a1bf1885eec7084af80961e1785f4895faa7658c59f11f3e7350d3ed48298cbaf4bcb3c19ca78952cc54dd3e865c3afe7'
