@@ -1,0 +1,7 @@
+paths:
+  jquery: "libs/jquery/jquery-min"
+  rails: "libs/jquery/rails"
+
+modules:
+  - name: 'jquery'
+  - name: 'rails'
