@@ -178,6 +178,5 @@ DEPENDENCIES
   requirejs-rails
   rspec-rails (>= 2.8.0.rc1)
   sass-rails (~> 3.1.5)
-  therubyracer-heroku
   thin
   uglifier (>= 1.0.3)
