@@ -44,3 +44,7 @@ gem 'requirejs-rails'
 
 gem "thin"
 gem "heroku"
+
+group :production do
+  gem 'therubyracer-heroku'
+end
