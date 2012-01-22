@@ -45,6 +45,8 @@ gem 'requirejs-rails'
 gem "thin"
 gem "heroku"
 
+=begin
 group :production do
   gem 'therubyracer-heroku' ">= 0.9.8"
 end
+=end
