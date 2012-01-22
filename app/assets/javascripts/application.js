@@ -5,10 +5,10 @@ require.config({
     underscore: 'libs/underscore/underscore-min',
     backbone: 'libs/backbone/backbone-optamd3-min',
     modelbinding: 'libs/backbone/backbone.modelbinding',
-    //twDropdown: 'libs/twitter/bootstrap-dropdown',
+    twDropdown: 'libs/twitter/bootstrap-dropdown',
     twTransition: 'libs/twitter/bootstrap-transition',
     twAlert: 'libs/twitter/bootstrap-alert',
-    //twModal: 'libs/twitter/bootstrap-modal',
+    twModal: 'libs/twitter/bootstrap-modal',
     twScroll: 'libs/twitter/bootstrap-scrollspy',
     twTab: 'libs/twitter/bootstrap-tab',
     twTooltip1: 'libs/twitter/bootstrap-tooltip',
@@ -27,8 +27,8 @@ require(["order!jquery",
     "order!rails",
     "order!backbone",
     "order!modelbinding",
-    "order!/assets/libs/twitter/bootstrap-dropdown.js",
-    "order!/assets/libs/twitter/bootstrap-modal.js",
+    "order!twDropdown",
+    "order!twModal",
     'views/app'], function(AppView){
   var app_view = new AppView;
 });
