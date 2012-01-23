@@ -25,6 +25,10 @@ define([
             newActivityView.render();
         });
 
+        $("#searchMenu").click(function(){
+            $(this).parent(".dropdown").toggleClass("open");
+        })
+
     });
 
     var AppView = Backbone.View.extend({
