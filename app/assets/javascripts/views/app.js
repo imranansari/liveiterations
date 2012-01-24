@@ -1,3 +1,16 @@
+getActivitiesFromService = function ($) {
+    var data;
+
+    $.ajax({
+        url:'/storymap/activity',
+        type:'GET',
+        dataType:'json',
+        async:false,
+        success:function (dataFromService) {
+            data = dataFromService;
+        }});
+    return data;
+}
 define([
     'jquery',
     'underscore',
@@ -18,6 +31,7 @@ define([
         $(".addUserTask").live('click', function () {
             $(this).parent().parent().parent().append("<div>User Task</div>");
         });
+
         $("#addActivity").click(function () {
 
             var storyActivity = new StoryActivity();
@@ -25,7 +39,7 @@ define([
             newActivityView.render();
         });
 
-        $("#searchMenu").click(function(){
+        $("#searchMenu").click(function () {
             $(this).parent(".dropdown").toggleClass("open");
         })
 
@@ -37,6 +51,9 @@ define([
     });
 
     var storyActivitiesView = new StoryActivitiesView({ collection:StoryActivities });
+
+    var data = this.getActivitiesFromService($);
+    StoryActivities.add(data);
 
     $('#storyActivitiesList').html(storyActivitiesView.render().el);
 

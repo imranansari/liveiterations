@@ -18,8 +18,25 @@ class StorymapController < ApplicationController
   end
 
   def activity
+    puts "activities display"
+    @userActivities = UserActivity.all
+
+    respond_to do |format|
+      format.json { render json: @userActivities }
+    end
+
+  end
 
 
+  def newActivity
+    respond_to do |format|
+      format.json {
+        activity = JSON.parse(request.body.read)
+        newActivity = UserActivity.create(activity)
+        newActivity.to_json
+        render json: newActivity
+      }
+    end
   end
 
 end

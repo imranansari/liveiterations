@@ -9,7 +9,7 @@ define([
         // Reference to this collection's model.
         model:StoryActivity,
 
-        url:'/storymap/activities'
+        url:'/storymap/activity'
 
     });
 

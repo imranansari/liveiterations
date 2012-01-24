@@ -38,6 +38,7 @@ define([
         save:function () {
             console.log(JSON.stringify(this.model));
             StoryActivities.add([this.model]);
+            this.model.save();
             this.close();
         }
 

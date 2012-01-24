@@ -1,6 +1,9 @@
 Liveiterations::Application.routes.draw do
   get "storymap/index"
   get "storymap/test"
+  get "storymap/activity"
+
+  match 'storymap/activity', :to => 'storymap#newActivity', format: :json
 
   #get \"users\/show\"
 
