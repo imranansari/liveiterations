@@ -33,6 +33,9 @@ class StorymapController < ApplicationController
       format.json {
         activity = JSON.parse(request.body.read)
         newActivity = UserActivity.create(activity)
+        newActivity.storyTasks.build(name: "Task1")
+        newActivity.storyTasks.build(name: "Task2")
+        newActivity.save
         newActivity.to_json
         render json: newActivity
       }

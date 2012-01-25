@@ -47,6 +47,9 @@ gem 'requirejs-rails'
 gem "thin"
 gem "heroku"
 
+gem "rspec-core"
+gem "rspec"
+
 =begin
 group :production do
   gem 'therubyracer-heroku' ">= 0.9.8"

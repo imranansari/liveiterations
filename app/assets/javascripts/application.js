@@ -1,4 +1,5 @@
 require(["order!jquery",
+    "order!livequery",
     "order!rails",
     "order!backbone",
     "order!modelbinding",
