@@ -1,100 +1,41 @@
-<div class="navbar navbar-fixed">
+<div class="navbar">
     <div class="navbar-inner">
         <div class="container">
-            <a class="brand" href="#">LiveIterations</a>
+            <a class="brand" href="./index.html">LiveIterations</a>
             <ul class="nav">
-                <li class="active"><a href="#">Portfolio</a></li>
-                <!--               <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Projects <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Visualizer</a></li>
-                        <li><a href="#">iEngage</a></li>
-                        <li><a href="#">BOB</a></li>
-                        <li class="divider"></li>
-                        <li><a href="#">Separated link</a></li>
-                    </ul>
-                </li>-->
                 <li><a href="index">Story Map</a></li>
-                <li><a href="#contact">Kanban Board</a></li>
-                <li><a href="#contact">Iterations</a></li>
-
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" id="searchMenu">Search <b class="caret"></b></a>
-                    <ul class="dropdown-menu" style="max-width: 350px;">
-                        <li>
-                            <form action="" class="form-search">
-                                <input type="text" class="search-query span4" placeholder="Search">
-                                <button class="btn" type="button">Search</button>
-
-                            </form>
-                        </li>
-                    </ul>
-                </li>
-                <li class="vertical-divider"></li>
-
-
+                <li><a href="#board">Kanban Board</a></li>
+                <li><a href="#iterations">Iterations</a></li>
             </ul>
-            <div style="position:relative; left: 5%;">
-                <ul class="nav">
-                    <li>
-                        <form action="" class="form-search navbar-form">
-                            <div class="btn-group">
-                                <a class="btn" id="addActivity"><i class="plus"></i> Activity</a>
-                                <a class="btn" href="#"><i class="plus"></i> User Task</a>
-                                <a class="btn" href="#"><i class="plus"></i> Task</a>
-                            </div>
-                        </form>
-                    </li>
-                </ul>
 
-            </div>
+            <ul class="nav pull-right">
 
-            <div style="position:relative; left: 20%;">
                 <ul class="nav">
                     <li class="dropdown">
-                        <a class="dropdown-toggle dropdown-signin" style="float: right" id="signin-link" href="#">Sign
-                            in</a>
-
-                        <ul class="dropdown-menu dropdown-form dropdown-menu-dark" id="signin-dropdown">
-                            <li>
-                                <form action="https://twitter.com/sessions?phx=1" class="js-signin signin"
-                                      method="post">
-                                    <fieldset class="textbox">
-                                        <label class="username js-username">
-                                            <span>Email</span>
-
-                                            <input class="js-username-field" type="text" value=""
-                                                   name="session[username_or_email]" autocomplete="on"></label>
-                                        <label class="password js-password">
-                                            <span>Password</span>
-
-                                            <input class="js-password-field" type="password" value=""
-                                                   name="session[password]"></label>
-                                    </fieldset>
-
-                                    <fieldset class="subchck">
-                                        <label class="remember" for="remember_me">
-                                            Remember me
-                                        </label>
-                                        <input type="checkbox" value="1" name="remember_me" id="remember_me">
-                                        <button type="submit" class="btn submit">Sign in</button>
-                                    </fieldset>
-
-                                    <div class="divider"></div>
-
-                                    <p>
-                                        <a class="mobile has-sms" href="/account/complete">Signup</a>
-                                        <a class="mobile has-sms" href="/account/complete">Forgot Password?</a>
-                                    </p>
-
-                                </form>
-
-                            </li>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Add <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a id="addActivity">User Activity</a></li>
+                            <li><a href="#">User Task</a></li>
+                            <li><a href="#">Development Task</a></li>
                         </ul>
                     </li>
                 </ul>
 
-            </div>
+                <form class="navbar-search pull-left" action="">
+                    <input type="text" class="search-query span2" placeholder="Search">
+                </form>
+                <li class="vertical-divider"></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">User1 <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Preferences</a></li>
+                        <li><a href="#">Settings</a></li>
+                        <li><a href="#">Something else here</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">Separated link</a></li>
+                    </ul>
+                </li>
+            </ul>
         </div>
     </div>
 </div>
