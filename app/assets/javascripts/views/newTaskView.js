@@ -39,6 +39,7 @@ define([
         save:function () {
             console.log(JSON.stringify(this.model));
             this.options.parentModel.storyTasks.add(this.model);
+            this.options.parentModel.set({order: new Date()});
             this.options.parentModel.save();
             this.close();
         }

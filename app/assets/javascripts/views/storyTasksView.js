@@ -6,6 +6,7 @@ define([
 ], function ($, _, Backbone, StoryTaskView) {
     var StoryTasksView = Backbone.View.extend({
         tagName:"div",
+        className: "storyTasks",
         initialize:function (options) {
             // Bind on initialization rather than rendering. This might seem
             // counter-intuitive because we are effectively "rendering" this

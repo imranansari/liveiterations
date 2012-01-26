@@ -37,12 +37,32 @@ define([
                 console.log(storyTasksView.render().el);
 
                 $("#" + model.id).livequery(function () {
+                    $("#" + model.id).expire();
                     $("#" + model.id).append(storyTasksView.render().el);
                 });
 
             }, this);
+
+            this.collection.bind("change", function (model) {
+                console.log('collection change');
+
+                var storyTasks = new StoryTasks();
+
+                var storyTasksView = new StoryTasksView({ collection:storyTasks });
+                //storyTasks.add(new StoryTask({name:'tasks 1234'}));
+
+                var storyTasksArr = model.get('storyTasks');
+
+                if (storyTasksArr != undefined) {
+                    storyTasks.add(storyTasksArr);
+                }
+
+                $("#" + model.id).append(storyTasksView.render().el);
+
+            }, this);
         },
         render:function () {
+            console.log('rendering activities view');
             return this;
         }
     });

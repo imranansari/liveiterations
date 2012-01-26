@@ -44,13 +44,13 @@ define(['underscore',
                 this.storyTasks = nestCollection(this, 'storyTasks', new StoryTasks());
             }
 
-            this.storyTasks.bind("change", function () {
+/*            this.storyTasks.bind("change", function () {
                 model.save();
             });
 
             this.storyTasks.bind("add", function () {
                 model.save();
-            });
+            });*/
         }
     });
     return StoryActivity;
