@@ -1,10 +1,13 @@
 require(["order!jquery",
     "order!livequery",
     "order!rails",
+    "order!viewporter",
     "order!backbone",
     "order!modelbinding",
     "order!twDropdown",
     "order!twModal",
+    "order!twTooltip1",
+    "order!twPopover",
     'views/app'], function(AppView){
   var appView = new AppView();
 });

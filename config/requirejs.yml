@@ -18,6 +18,7 @@ paths:
     twCarousel: "libs/twitter/bootstrap-carousel"
     twTypeahead: "libs/twitter/bootstrap-typeahead"
     handlebars: "libs/handlebars/handlebars.1.0.0.beta.3"
+    viewporter: "libs/zynga/viewporter"
     text: "libs/require/text"
     application: "application"
 
@@ -41,6 +42,7 @@ modules:
   - name: "twCarousel"
   - name: "twTypeahead"
   - name: "handlebars"
+  - name: "viewporter"
   - name: "text"
   - name: "application"
 

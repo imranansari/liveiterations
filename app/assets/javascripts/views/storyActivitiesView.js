@@ -3,12 +3,11 @@ define([
     'livequery',
     'underscore',
     'backbone',
-    'handlebars',
     'views/storyActivityView',
-    'views/storyTaskView',
+    'views/storyTasksView',
     'models/storyTask',
-    'text!templates/storyActivity.html'
-], function ($, livequery, _, Backbone, handlebars, StoryActivityView, StoryTaskView, StoryTask, htmlTpl) {
+    'collections/storyTasks'
+], function ($, livequery, _, Backbone, StoryActivityView, StoryTasksView, StoryTask, StoryTasks) {
     var StoryActivitiesView = Backbone.View.extend({
         tagName:"div",
         initialize:function (options) {
@@ -25,23 +24,21 @@ define([
 
                 $(this.el).append(storyActivityView.render().el);
 
+                var storyTasks = new StoryTasks();
+
+                var storyTasksView = new StoryTasksView({ collection:storyTasks });
+                //storyTasks.add(new StoryTask({name:'tasks 1234'}));
+
                 var storyTasksArr = model.get('storyTasks');
 
                 if (storyTasksArr != undefined) {
-
-                    $(storyTasksArr).each(function () {
-                        console.log(this);
-
-                        var storyTaskView = new StoryTaskView({
-                            model:new StoryTask(this)
-                        });
-
-                        $("#" + model.id).livequery(function () {
-                            $("#" + model.id).append(storyTaskView.render().el);
-                        });
-                    });
-
+                    storyTasks.add(storyTasksArr);
                 }
+                console.log(storyTasksView.render().el);
+
+                $("#" + model.id).livequery(function () {
+                    $("#" + model.id).append(storyTasksView.render().el);
+                });
 
             }, this);
         },

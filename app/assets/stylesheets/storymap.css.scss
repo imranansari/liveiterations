@@ -124,6 +124,10 @@
   color: white;
 }
 
+#main{
+  margin-top: 20px;
+}
+
 .story .storyDesc{
   margin-top: 8px;
 }
@@ -147,4 +151,10 @@
 
 i {
   background-image: url(/assets/glyphicons-halflings-sprite.png);
+}
+
+//Overrides
+
+.popover .inner {
+  width: 130px;
 }

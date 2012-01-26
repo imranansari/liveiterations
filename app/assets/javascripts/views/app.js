@@ -10,27 +10,25 @@ getActivitiesFromService = function ($) {
             data = dataFromService;
         }});
     return data;
-}
+};
+
 define([
     'jquery',
     'underscore',
     'backbone',
     'models/storyActivity',
     'collections/storyActivities',
+    'collections/storyTasks',
     'views/storyActivityView',
     'views/storyActivitiesView',
+    'views/storyTasksView',
     'views/newActivityView',
     'text!templates/menu.html'
-], function ($, _, Backbone, StoryActivity, StoryActivities, StoryActivityView, StoryActivitiesView, NewActivityView, menuHtml) {
+], function ($, _, Backbone, StoryActivity, StoryActivities, StoryTasks,StoryActivityView, StoryActivitiesView, StoryTasksView, NewActivityView, menuHtml) {
 
     $(document).ready(function () {
 
         $("#topmenu").html(menuHtml);
-
-
-        $(".addUserTask").live('click', function () {
-            $(this).parent().parent().parent().append("<div>User Task</div>");
-        });
 
         $("#addActivity").click(function () {
 
@@ -39,10 +37,15 @@ define([
             newActivityView.render();
         });
 
-        $("#searchMenu").click(function () {
+/*        $("#searchMenu").click(function () {
             $(this).parent(".dropdown").toggleClass("open");
-        })
+        })*/
 
+/*        $('.addUserTask').popover({trigger: 'manual', placement: 'bottom', content: $('#example').html()});
+        $('.addUserTask').live('mouseover', function(){
+            $('.addUserTask').popover('hide');
+            $(this).popover('show');
+        });*/
     });
 
     var AppView = Backbone.View.extend({
@@ -53,6 +56,7 @@ define([
     var storyActivitiesView = new StoryActivitiesView({ collection:StoryActivities });
 
     var data = this.getActivitiesFromService($);
+
     StoryActivities.add(data);
 
     $('#storyActivitiesList').html(storyActivitiesView.render().el);
