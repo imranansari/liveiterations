@@ -19,7 +19,7 @@ class StorymapController < ApplicationController
 
   def activity
     puts "activities display"
-    @userActivities = UserActivity.all
+    @userActivities = UserActivity.all.order_by([:created_at, :asc])
 
     respond_to do |format|
       format.json { render json: @userActivities }
