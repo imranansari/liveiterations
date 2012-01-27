@@ -37,9 +37,12 @@ define([
         },
 
         save:function () {
-            console.log(JSON.stringify(this.model));
+            //console.log(JSON.stringify(this.model));
 
-            StoryActivities.add([this.model]);
+            if(this.model.isNew()){
+                StoryActivities.add([this.model]);
+            }
+
             this.model.save();
             this.close();
         }

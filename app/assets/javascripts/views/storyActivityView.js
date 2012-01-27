@@ -4,11 +4,12 @@ define([
     'backbone',
     'handlebars',
     'views/newTaskView',
+    'views/newActivityView',
     'models/storyTask',
     'collections/storyActivities',
     'collections/storyTasks',
     'text!templates/storyActivity.html'
-], function ($, _, Backbone, handlebars, NewTaskView, StoryTask, StoryActivities, StoryTasks, htmlTpl) {
+], function ($, _, Backbone, handlebars, NewTaskView, NewActivityView,StoryTask, StoryActivities, StoryTasks, htmlTpl) {
     var StoryActivityView = Backbone.View.extend({
         //template: _.template($("#form1-template").html()),
         //tagName:"div",
@@ -20,7 +21,8 @@ define([
         },
 
         events:{
-            "click .addUserTask":"addUserTask"
+            "click .addUserTask":"addUserTask",
+            "click .editActivity":"editActivity"
         },
 
         render:function () {
@@ -39,14 +41,21 @@ define([
             //var storyTaskModel = new StoryTask({name:'taask 123'});
             //storyTasks.add(storyTaskModel);
 
-/*            this.model.storyTasks.add({name:'taask 123'});
+            /*            this.model.storyTasks.add({name:'taask 123'});
 
-            console.log(StoryActivities.toJSON());*/
+             console.log(StoryActivities.toJSON());*/
 
             var storyTask = new StoryTask();
             var newTaskView = new NewTaskView({model:storyTask, parentModel:this.model});
             newTaskView.render();
+        },
+
+        editActivity:function () {
+            console.log(this.model.id);
+            var newActivityView = new NewActivityView({model:this.model});
+            newActivityView.render();
         }
+
     });
     return StoryActivityView;
 });

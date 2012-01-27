@@ -9,7 +9,7 @@ define([
     'collections/storyActivities',
     'views/storyActivityView',
     'text!templates/newtask.html'
-], function ($, _, Backbone, handlebars, modelbinding, StoryActivity, StoryTask, StoryActivities ,StoryActivityView, htmlTpl) {
+], function ($, _, Backbone, handlebars, modelbinding, StoryActivity, StoryTask, StoryActivities, StoryActivityView, htmlTpl) {
 
     var mod1;
     Backbone.ModelBinding = require('modelbinding');
@@ -38,9 +38,15 @@ define([
 
         save:function () {
             console.log(JSON.stringify(this.model));
-            this.options.parentModel.storyTasks.add(this.model);
-            this.options.parentModel.set({order: new Date()});
-            this.options.parentModel.save();
+
+            if (this.model.isNew()) {
+                this.options.parentModel.storyTasks.add(this.model);
+                this.options.parentModel.set({order:new Date()});
+                this.options.parentModel.save();
+            } else {
+                this.model.save();
+            }
+
             this.close();
         }
 
