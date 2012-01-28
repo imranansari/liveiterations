@@ -60,4 +60,25 @@ class StorymapController < ApplicationController
     end
   end
 
+
+  def updateTask
+    respond_to do |format|
+      format.json {
+        task = JSON.parse(request.body.read)
+
+        activity = UserActivity.where("storyTasks._id" => BSON.ObjectId(task["_id"])).first
+        #puts "activityJson: " + activity.to_json
+
+        updateTask = activity.storyTasks.find(task["_id"])
+        #puts "taskJson : " + updateTask.to_json
+
+        updateTask.name = task["name"]
+        updateTask.desc = task["desc"]
+        updateTask.save
+
+        render json: updateTask
+      }
+    end
+  end
+
 end

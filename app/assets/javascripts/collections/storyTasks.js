@@ -6,7 +6,8 @@ define([
 
     var StoryTasks = Backbone.Collection.extend({
 
-        model:StoryTask
+        model:StoryTask ,
+        url:'/storymap/task'
     });
 
 

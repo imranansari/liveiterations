@@ -5,6 +5,7 @@ Liveiterations::Application.routes.draw do
 
   match 'storymap/activity', :to => 'storymap#newActivity', format: :json
   match 'storymap/activity/:id', :to => 'storymap#updateActivity',  format: :json
+  match 'storymap/task/:id', :to => 'storymap#updateTask',  format: :json
 
   #get \"users\/show\"
 
