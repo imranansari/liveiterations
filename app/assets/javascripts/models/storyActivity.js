@@ -24,10 +24,6 @@ define(['underscore',
         return nestedCollection;
     }
 
-    function testFunction(msg) {
-        console.log(msg);
-    }
-
     var StoryActivity = Backbone.Model.extend({
         idAttribute:"_id",
 
@@ -36,7 +32,6 @@ define(['underscore',
             var model = this;
 
             if (this.get('storyTasks') != undefined) {
-                testFunction('test message');
                 //this.storyTasks = nestCollection(this, 'storyTasks', new StoryTasks(this.get('storyTasks')));
                 //new StoryTasks(this.get('storyTasks'));
                 this.storyTasks = nestCollection(this, 'storyTasks', new StoryTasks(this.get('storyTasks')));
