@@ -60,6 +60,18 @@ class StorymapController < ApplicationController
     end
   end
 
+  def deleteActivity
+    respond_to do |format|
+      format.json {
+
+        deleteActivity = UserActivity.where(:_id => params["id"]).first
+
+        deleteActivity.destroy
+        render json: deleteActivity
+      }
+    end
+  end
+
 
   def updateTask
     respond_to do |format|
@@ -77,6 +89,24 @@ class StorymapController < ApplicationController
         updateTask.save
 
         render json: updateTask
+      }
+    end
+  end
+
+  def deleteTask
+    puts "delete task"
+    respond_to do |format|
+      format.json {
+        #task = JSON.parse(request.body.read)
+
+        activity = UserActivity.where("storyTasks._id" => BSON.ObjectId(params["id"])).first
+        #puts "activityJson: " + activity.to_json
+
+        deleteTask = activity.storyTasks.find(params["id"])
+
+        deleteTask.destroy
+
+        render json: deleteTask
       }
     end
   end
