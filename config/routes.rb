@@ -4,8 +4,11 @@ Liveiterations::Application.routes.draw do
   get "storymap/activity"
 
   match 'storymap/activity', :to => 'storymap#newActivity', format: :json
-  match 'storymap/activity/:id', :to => 'storymap#updateActivity',  format: :json
-  match 'storymap/task/:id', :to => 'storymap#updateTask',  format: :json
+  match 'storymap/activity/:id', :to => 'storymap#updateActivity',  format: :json, :via => :post
+  match 'storymap/activity/:id', :to => 'storymap#updateActivity',  format: :json, :via => :put
+  match 'storymap/task/:id', :to => 'storymap#updateTask',  format: :json, :via => :put
+  match 'storymap/task/:id', :to => 'storymap#deleteTask',  :via => :delete
+  match 'storymap/activity/:id', :to => 'storymap#deleteActivity',  :via => :delete
 
   #get \"users\/show\"
 

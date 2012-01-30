@@ -17,10 +17,11 @@ define([
     var NewActivityView = Backbone.View.extend({
 
         initialize:function (options) {
-
+            this.template = Handlebars.compile(htmlTpl);
         },
         render:function () {
-            $(this.el).html(htmlTpl);
+            var content = this.template({editable: (this.options.mode == 'edit')});
+            $(this.el).html(content);
             mod1 = $(this.el).modal('show');
             Backbone.ModelBinding.bind(this);
             return this;
@@ -28,7 +29,8 @@ define([
 
         events:{
             "click .close":"close",
-            "click #saveActivity":"save"
+            "click #saveActivity":"save",
+            "click #deleteActivity":"deleteActivity"
 
         },
 
@@ -39,11 +41,18 @@ define([
         save:function () {
             //console.log(JSON.stringify(this.model));
 
-            if(this.model.isNew()){
+            if (this.options.mode != 'edit') {
                 StoryActivities.add([this.model]);
             }
 
             this.model.save();
+            this.close();
+        },
+
+        deleteActivity:function(){
+            this.options.viewToRemove.remove();
+            this.model.destroy();
+            StoryActivities.remove(this.model);
             this.close();
         }
 

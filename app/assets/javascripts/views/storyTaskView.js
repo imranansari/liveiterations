@@ -28,7 +28,7 @@ define([
 
         editTask:function () {
             console.log(this.model.id);
-            var editTaskView = new NewTaskView({model:this.model});
+            var editTaskView = new NewTaskView({model:this.model, viewToRemove:this, mode:'edit'});
             editTaskView.render();
         }
     });

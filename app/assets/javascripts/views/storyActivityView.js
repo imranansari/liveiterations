@@ -9,7 +9,7 @@ define([
     'collections/storyActivities',
     'collections/storyTasks',
     'text!templates/storyActivity.html'
-], function ($, _, Backbone, handlebars, NewTaskView, NewActivityView,StoryTask, StoryActivities, StoryTasks, htmlTpl) {
+], function ($, _, Backbone, handlebars, NewTaskView, NewActivityView, StoryTask, StoryActivities, StoryTasks, htmlTpl) {
     var StoryActivityView = Backbone.View.extend({
         //template: _.template($("#form1-template").html()),
         //tagName:"div",
@@ -17,7 +17,7 @@ define([
         initialize:function () {
             _.bindAll(this, 'render');
             this.model.bind('change', this.render);
-            this.template = Handlebars.compile(htmlTpl);
+            this.template = handlebars.compile(htmlTpl);
         },
 
         events:{
@@ -52,7 +52,7 @@ define([
 
         editActivity:function () {
             console.log(this.model.id);
-            var newActivityView = new NewActivityView({model:this.model});
+            var newActivityView = new NewActivityView({model:this.model, viewToRemove:this, mode:'edit'});
             newActivityView.render();
         }
 

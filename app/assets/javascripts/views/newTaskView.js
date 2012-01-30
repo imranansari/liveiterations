@@ -8,8 +8,9 @@ define([
     'models/storyTask',
     'collections/storyActivities',
     'views/storyActivityView',
+    'views/storyActivitiesView',
     'text!templates/newtask.html'
-], function ($, _, Backbone, handlebars, modelbinding, StoryActivity, StoryTask, StoryActivities, StoryActivityView, htmlTpl) {
+], function ($, _, Backbone, handlebars, modelbinding, StoryActivity, StoryTask, StoryActivities, StoryActivityView, StoryActivitiesView, htmlTpl) {
 
     var mod1;
     Backbone.ModelBinding = require('modelbinding');
@@ -17,10 +18,11 @@ define([
     var NewTaskView = Backbone.View.extend({
 
         initialize:function (options) {
-
+            this.template = Handlebars.compile(htmlTpl);
         },
         render:function () {
-            $(this.el).html(htmlTpl);
+            var content = this.template({editable:(this.options.mode == 'edit')});
+            $(this.el).html(content);
             mod1 = $(this.el).modal('show');
             Backbone.ModelBinding.bind(this);
             return this;
@@ -28,7 +30,8 @@ define([
 
         events:{
             "click .close":"close",
-            "click #saveActivity":"save"
+            "click #saveTask":"save",
+            "click #deleteTask":"deleteTask"
 
         },
 
@@ -39,13 +42,34 @@ define([
         save:function () {
             console.log(JSON.stringify(this.model));
 
-            if (this.model.isNew()) {
+            if (this.options.mode != 'edit') {
                 this.options.parentModel.storyTasks.add(this.model);
-                this.options.parentModel.set({order:new Date()});
+                this.options.parentModel.set({updated_at:new Date()});
                 this.options.parentModel.save();
             } else {
                 this.model.save();
             }
+
+            this.close();
+        },
+
+        deleteTask:function () {
+            this.options.viewToRemove.remove();
+            this.model.destroy();
+            //var colll1 = this.model.collection;
+            //colll1.remove(this.model);
+            //StoryActivities.get();
+            window.location.reload();
+
+
+
+/*            var storyActivitiesView = new StoryActivitiesView({ collection:StoryActivities });
+
+                var data = getActivitiesFromService($);
+
+                StoryActivities.add(data);
+
+                $('#storyActivitiesList').html(storyActivitiesView.render().el);*/
 
             this.close();
         }
