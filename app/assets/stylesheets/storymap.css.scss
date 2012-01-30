@@ -169,3 +169,45 @@ i {
 .popover .inner {
   width: 130px;
 }
+
+.x-bar {
+  background-image: -webkit-gradient(radial, 100% 50%,100,-50% 50%,100, from(rgb(0, 0, 0)), to(rgb(255, 255, 255)));
+  background-image: -webkit-radial-gradient(0% 50%, rgb(255, 255, 255), rgb(0, 0, 0));
+
+  width: 98.7%;
+  min-height: 20px;
+  min-width:90%;
+  float: left;
+  margin-top: -2px;
+  text-align: center;
+  margin-bottom: 5px;
+  color: white;
+}
+
+.arrowRight {
+  margin-bottom: 5px;
+  float: right;
+  height: 0px;
+  margin-top: -2px;
+  border-style: solid;
+  border-width: 10px 0 10px 17.3px;
+  border-color: transparent transparent transparent #4b4b4b;
+}
+
+.arrowDown {
+  margin-bottom: 5px;
+  height: 0px;
+  margin-top: -2px;
+  border-style: solid;
+  border-width: 34.6px 20px 0 20px;
+  border-color: transparent transparent transparent red;
+}
+
+.y-bar {
+  float: left;
+  min-height: 600px;
+  background-color: #ffffff;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgb(255, 255, 255)), to(rgb(0, 0, 0)));
+  background-image: -webkit-linear-gradient(top, rgb(255, 255, 255), rgb(0, 0, 0));
+
+}
