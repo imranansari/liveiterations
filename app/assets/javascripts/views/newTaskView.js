@@ -77,5 +77,6 @@ define([
     });
 
 
+    window.NewTaskView = NewTaskView;
     return NewTaskView;
 });

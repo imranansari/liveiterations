@@ -3,9 +3,9 @@ define([
     'underscore',
     'backbone',
     'handlebars',
-    'text!templates/storyTask.html',
-    'views/newTaskView'
-], function ($, _, Backbone, handlebars, htmlTpl, NewTaskView) {
+    'views/newTaskView',
+    'text!templates/storyTask.html'
+], function ($, _, Backbone, handlebars,NewTaskView, htmlTpl) {
     var StoryTaskView = Backbone.View.extend({
         //template: _.template($("#form1-template").html()),
         //tagName:"div",
@@ -28,7 +28,8 @@ define([
 
         editTask:function () {
             console.log(this.model.id);
-            var editTaskView = new NewTaskView({model:this.model, viewToRemove:this, mode:'edit'});
+            //console.log("def od new task1 "+NewTaskView);
+            var editTaskView = new window.NewTaskView({model:this.model, viewToRemove:this, mode:'edit'});
             editTaskView.render();
         }
     });

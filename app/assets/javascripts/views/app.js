@@ -23,8 +23,9 @@ define([
     'views/storyActivitiesView',
     'views/storyTasksView',
     'views/newActivityView',
+    'views/newTaskView',
     'text!templates/menu.html'
-], function ($, _, Backbone, StoryActivity, StoryActivities, StoryTasks,StoryActivityView, StoryActivitiesView, StoryTasksView, NewActivityView, menuHtml) {
+], function ($, _, Backbone, StoryActivity, StoryActivities, StoryTasks,StoryActivityView, StoryActivitiesView, StoryTasksView, NewActivityView, NewTaskView,menuHtml) {
 
     $(document).ready(function () {
 
@@ -60,7 +61,6 @@ define([
     StoryActivities.add(data);
 
     $('#storyActivitiesList').html(storyActivitiesView.render().el);
-
 
     return AppView;
 });

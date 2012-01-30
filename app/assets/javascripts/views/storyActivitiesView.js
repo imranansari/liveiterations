@@ -18,7 +18,8 @@ define([
             // be able to call render multiple times without subscribing to "add" more
             // than once.
             this.collection.bind("add", function (model) {
-                var storyActivityView = new StoryActivityView({
+                console.log('inside add StoryActivityView');
+                var storyActivityView = new window.StoryActivityView({
                     model:model
                 });
 
