@@ -40,7 +40,7 @@
 
 .story .type{
    //background-color: #ccccff;
-   background-color: #06C;
+   background-color: #E5E5E5;
    text-align: right;
 
    position:absolute;
@@ -50,16 +50,26 @@
    min-height: 5px;
 }
 
+.story .typeIndicator{
+  background-color: #1951f7;
+  min-height: 2px;
+  width: 100%;
+}
+
 .typeTask {
-  background-color: #0394d9;
-
+  background-color: #E5E5E5;
   text-align: right;
-
   position:absolute;
   top: -2px;
   left: -0.2px;
   width: 100%;
   min-height: 5px;
+}
+
+.story .typeTask .typeIndicator{
+  background-color: #01a516;
+  min-height: 2px;
+  width: 100%;
 }
 
 .story:before {
@@ -121,7 +131,7 @@
   text-align: left;
   position:relative;
   float:left;
-  color: white;
+  color: #000000;
 }
 
 #main{
