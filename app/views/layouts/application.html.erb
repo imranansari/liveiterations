@@ -9,7 +9,9 @@
   <title>LiveIterations</title>
   <meta name="description" content="">
   <meta name="author" content="">
-  <%= stylesheet_link_tag "application" %>
+  <%= stylesheet_link_tag "bootstrap" %>
+  <%= stylesheet_link_tag "bootstrap-responsive" %>
+  <%= stylesheet_link_tag "storymap" %>
   <%= requirejs_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
@@ -17,21 +19,11 @@
 <div id="viewporter">
   <div id="topmenu"></div>
   <div id="container" class="container">
-    <header>
-      <nav>
-        <ul class="hmenu">
-          <%= render 'shared/navigation' %>
-        </ul>
-      </nav>
-      <%- flash.each do |name, msg| -%>
-          <%= content_tag :div, msg, :id => "flash_\#{name}" if msg.is_a?(String) %>
-      <%- end -%>
-    </header>
+
     <div id="main" role="main">
       <%= yield %>
     </div>
-    <footer>
-    </footer>
+
   </div>
   <!--! end of #container -->
 </div>
