@@ -10,7 +10,7 @@ Liveiterations::Application.routes.draw do
   match 'storymap/task/:id', :to => 'storymap#deleteTask',  :via => :delete
   match 'storymap/activity/:id', :to => 'storymap#deleteActivity',  :via => :delete
 
-  get "projects/index"
+  get "project/index"
 
 
 
