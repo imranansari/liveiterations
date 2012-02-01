@@ -5,10 +5,11 @@ require(["order!jquery",
     "order!handlebars",
     "order!backbone",
     "order!modelbinding",
-    "order!twDropdown",
+    "order!bootstrap",
+  /*  "order!twDropdown",
     "order!twModal",
     "order!twTooltip1",
-    "order!twPopover",
+    "order!twPopover",*/
     'views/app'], function(AppView){
   var appView = new AppView();
 });

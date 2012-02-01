@@ -160,15 +160,19 @@
 }
 
 
-i {
+/*i {
   background-image: url(/assets/glyphicons-halflings-sprite.png);
+}*/
+
+[class^="icon-"] {
+background-image: url(/assets/glyphicons-halflings.png);
 }
 
 //Overrides
 
-.popover .inner {
+/*.popover .inner {
   width: 130px;
-}
+}*/
 
 .x-bar {
   background-image: -webkit-gradient(radial, 100% 50%,100,-50% 50%,100, from(rgb(0, 0, 0)), to(rgb(255, 255, 255)));
