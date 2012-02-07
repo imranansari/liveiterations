@@ -12,6 +12,9 @@ getActivitiesFromService = function ($) {
     return data;
 };
 
+function zyngaScroller($) {
+
+}
 define([
     'jquery',
     'underscore',
@@ -25,7 +28,7 @@ define([
     'views/newActivityView',
     'views/newTaskView',
     'text!templates/menu.html'
-], function ($, _, Backbone, StoryActivity, StoryActivities, StoryTasks,StoryActivityView, StoryActivitiesView, StoryTasksView, NewActivityView, NewTaskView,menuHtml) {
+], function ($, _, Backbone, StoryActivity, StoryActivities, StoryTasks, StoryActivityView, StoryActivitiesView, StoryTasksView, NewActivityView, NewTaskView, menuHtml) {
 
     $(document).ready(function () {
 
@@ -38,15 +41,120 @@ define([
             newActivityView.render();
         });
 
-/*        $("#searchMenu").click(function () {
-            $(this).parent(".dropdown").toggleClass("open");
-        })*/
+        /*        $("#searchMenu").click(function () {
+         $(this).parent(".dropdown").toggleClass("open");
+         })*/
 
-/*        $('.addUserTask').popover({trigger: 'manual', placement: 'bottom', content: $('#example').html()});
-        $('.addUserTask').live('mouseover', function(){
-            $('.addUserTask').popover('hide');
-            $(this).popover('show');
-        });*/
+        /*        $('.addUserTask').popover({trigger: 'manual', placement: 'bottom', content: $('#example').html()});
+         $('.addUserTask').live('mouseover', function(){
+         $('.addUserTask').popover('hide');
+         $(this).popover('show');
+         });*/
+
+        //zyngaScroller($);
+
+        //zynga
+        var zyngaStorymapContainer = document.getElementById("zynga-storymap-container");
+        var content = document.getElementById("content");
+
+        // Setup Scroller
+        // Initialize Scroller
+        window.zyngaScroller = new Scroller(render, {
+
+        });
+
+        var rect = zyngaStorymapContainer.getBoundingClientRect();
+
+        window.zyngaScroller.setPosition(rect.left + zyngaStorymapContainer.clientLeft, rect.top + zyngaStorymapContainer.clientTop);
+        window.zyngaScroller.setDimensions(zyngaStorymapContainer.clientWidth, zyngaStorymapContainer.clientHeight, content.offsetWidth, content.offsetHeight);
+        //scroller.setSnapSize(400, 400);
+
+
+        // Event Handler
+
+        if ('ontouchstart' in window) {
+
+            zyngaStorymapContainer.addEventListener("touchstart", function (e) {
+                // Don't react if initial down happens on a form element
+
+                if (e.target.tagName.match(/input|textarea|select/i)) {
+                    return;
+                }
+
+                if ($(e.target).hasClass('editActivity') || $(e.target).hasClass('addUserTask') || $(e.target).hasClass('editTask')) {
+                    return;
+                }
+
+                window.zyngaScroller.doTouchStart(e.touches, e.timeStamp);
+                e.preventDefault();
+            }, false);
+
+            document.addEventListener("touchmove", function (e) {
+                window.zyngaScroller.doTouchMove(e.touches, e.timeStamp);
+            }, false);
+
+            document.addEventListener("touchend", function (e) {
+                window.zyngaScroller.doTouchEnd(e.timeStamp);
+            }, false);
+
+        } else {
+
+            var mousedown = false;
+
+            zyngaStorymapContainer.addEventListener("mousedown", function (e) {
+                // Don't react if initial down happens on a form element
+                if (e.target.tagName.match(/input|textarea|select/i)) {
+                    return;
+                }
+
+                window.zyngaScroller.doTouchStart([
+                    {
+                        pageX:e.pageX,
+                        pageY:e.pageY
+                    }
+                ], e.timeStamp);
+
+                mousedown = true;
+            }, false);
+
+            document.addEventListener("mousemove", function (e) {
+                if (!mousedown) {
+                    return;
+                }
+
+                window.zyngaScroller.doTouchMove([
+                    {
+                        pageX:e.pageX,
+                        pageY:e.pageY
+                    }
+                ], e.timeStamp);
+
+                mousedown = true;
+            }, false);
+
+            document.addEventListener("mouseup", function (e) {
+                if (!mousedown) {
+                    return;
+                }
+
+                window.zyngaScroller.doTouchEnd(e.timeStamp);
+
+                mousedown = false;
+            }, false);
+
+        }
+        var storyActivitiesView = new StoryActivitiesView({ collection:StoryActivities });
+
+        var data = getActivitiesFromService($);
+
+        StoryActivities.add(data);
+
+        $('#storyActivitiesList').html(storyActivitiesView.render().el);
+        $('#content').css('width', ($('.storyContainer').size() * $('.storyContainer').width()) + 550 + 'px');
+
+        //scroller.setPosition(rect.left + zyngaStorymapContainer.clientLeft, rect.top + zyngaStorymapContainer.clientTop);
+        window.zyngaScroller.setDimensions(zyngaStorymapContainer.clientWidth, zyngaStorymapContainer.clientHeight, content.offsetWidth, content.offsetHeight);
+
     });
 
     var AppView = Backbone.View.extend({
@@ -54,13 +162,21 @@ define([
 
     });
 
-    var storyActivitiesView = new StoryActivitiesView({ collection:StoryActivities });
 
-    var data = this.getActivitiesFromService($);
+    // Content Generator
+    /*    	var size = 100;
+     var frag = document.createDocumentFragment();
+     for (var row=0, rl=content.clientHeight/size; row<rl; row++) {
+     for (var cell=0, cl=content.clientWidth/size; cell<cl; cell++) {
+     elem = document.createElement("div");
+     elem.className = "cell";
+     elem.style.backgroundColor = row%2 + cell%2 > 0 ? "#ddd" : "";
+     elem.innerHTML = row+","+cell;
+     frag.appendChild(elem);
+     }
+     }
+     content.appendChild(frag);*/
 
-    StoryActivities.add(data);
-
-    $('#storyActivitiesList').html(storyActivitiesView.render().el);
 
     return AppView;
 });

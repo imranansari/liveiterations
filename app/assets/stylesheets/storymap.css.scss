@@ -2,55 +2,45 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
-
 .storyActivities {
   list-style: none;
   white-space: nowrap;
   width: 200%;
-  }
+}
 
-  .storyActivities li{
-      //border-right: solid 1px #ffffff;
-          display: inline-block;
-          padding: 10px;
-          height: 400px;
-          //padding-right: 10px;
-          border: dashed 1px gray;
-  }
+.storyActivities li {
+//border-right: solid 1px #ffffff; display: inline-block;
+  padding: 10px;
+  height: 400px;
+//padding-right: 10px; border: dashed 1px gray;
+}
 
 .story {
-	//padding:50px;
-    float:left;
-    padding:10px 5px;
-    width: 95%;
-	margin:auto;
-	position:relative;
-	//background-color:#fe6;
-	//background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#fe6), to(#f6ef97), color-stop(.6,#f5da41));
-	//background:-moz-linear-gradient(top, #fe6, #f5da41, #f6ef97);
+//padding:50px; float: left;
+  padding: 10px 5px;
+  width: 95%;
+  margin: auto;
+  position: relative;
+//background-color:#fe6; //background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#fe6), to(#f6ef97), color-stop(.6,#f5da41)); //background:-moz-linear-gradient(top, #fe6, #f5da41, #f6ef97); background-color: #f5f5f5;
 
-  background-color: #f5f5f5;
-
-	box-shadow:0 0 5px rgba(0,0,0,.2);
-	-webkit-box-shadow:0 0 5px rgba(0,0,0,.2);
-	-moz-box-shadow:0 0 5px rgba(0,0,0,.2);
-    margin-bottom: 15px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, .2);
+  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, .2);
+  -moz-box-shadow: 0 0 5px rgba(0, 0, 0, .2);
+  margin-bottom: 15px;
 }
 
-.story .type{
-   //background-color: #ccccff;
-   background-color: #E5E5E5;
-   text-align: right;
+.story .type {
+//background-color: #ccccff; background-color: #E5E5E5;
+  text-align: right;
 
-   position:absolute;
-   top: -2px;
-   left: -0.2px;
-   width: 100%;
-   min-height: 5px;
+  position: absolute;
+  top: -2px;
+  left: -0.2px;
+  width: 100%;
+  min-height: 5px;
 }
 
-.story .typeIndicator{
+.story .typeIndicator {
   background-color: #1951f7;
   min-height: 2px;
   width: 100%;
@@ -59,100 +49,98 @@
 .typeTask {
   background-color: #E5E5E5;
   text-align: right;
-  position:absolute;
+  position: absolute;
   top: -2px;
   left: -0.2px;
   width: 100%;
   min-height: 5px;
 }
 
-.story .typeTask .typeIndicator{
+.story .typeTask .typeIndicator {
   background-color: #01a516;
   min-height: 2px;
   width: 100%;
 }
 
 .story:before {
-	content:'';
-	display:block;
-	width:90%;
-	height:20%;
-	position:absolute;
-	left:10px;
-	bottom:3px;
-	background-color:rgba(0,0,0,.5);
-	-o-transform:rotate(-3deg);
-	-webkit-transform:rotate(-3deg);
-	-moz-transform:rotate(-3deg);
-	box-shadow:0 0 10px #000;
-	-webkit-box-shadow:0 0 10px #000;
-	-moz-box-shadow:0 0 10px #000;
-	opacity:1;
-	z-index:-1;
+  content: '';
+  display: block;
+  width: 90%;
+  height: 20%;
+  position: absolute;
+  left: 10px;
+  bottom: 3px;
+  background-color: rgba(0, 0, 0, .5);
+  -o-transform: rotate(-3deg);
+  -webkit-transform: rotate(-3deg);
+  -moz-transform: rotate(-3deg);
+  box-shadow: 0 0 10px #000;
+  -webkit-box-shadow: 0 0 10px #000;
+  -moz-box-shadow: 0 0 10px #000;
+  opacity: 1;
+  z-index: -1;
 }
 
 .story:after {
-	content:'';
-	display:block;
-	width:90%;
-	height:20%;
-	position:absolute;
-	right:10px;
-	bottom:3px;
-	background-color:rgba(0,0,0,.5);
-	-o-transform:rotate(3deg);
-	-webkit-transform:rotate(3deg);
-	-moz-transform:rotate(3deg);
-	box-shadow:0 0 10px #000;
-	-webkit-box-shadow:0 0 10px #000;
-	-moz-box-shadow:0 0 10px #000;
-	opacity:1;
-	z-index:-1;
+  content: '';
+  display: block;
+  width: 90%;
+  height: 20%;
+  position: absolute;
+  right: 10px;
+  bottom: 3px;
+  background-color: rgba(0, 0, 0, .5);
+  -o-transform: rotate(3deg);
+  -webkit-transform: rotate(3deg);
+  -moz-transform: rotate(3deg);
+  box-shadow: 0 0 10px #000;
+  -webkit-box-shadow: 0 0 10px #000;
+  -moz-box-shadow: 0 0 10px #000;
+  opacity: 1;
+  z-index: -1;
 }
 
-.container{
+.container {
   width: 100%;
 }
 
-.storyContainer{
-    //height: 300px;
-    min-height: 600px;
-    border-right: 1px dashed;
-    min-width: 300px;
+.storyContainer {
+//height: 300px; min-height: 600px;
+  border-right: 1px dashed;
+  min-width: 300px;
 }
 
-#storyActivitiesList{
+#storyActivitiesList {
   margin-left: -15px;
-  //width: 230%;
-  width: 230%;
+//width: 230%; width: 100%;
 }
 
 .story .storyTitle {
   font-weight: bolder;
   display: inline-block;
   text-align: left;
-  position:relative;
-  float:left;
+  position: relative;
+  float: left;
   color: #000000;
 }
 
-#main{
+#main {
   margin-top: 50px;
 }
 
-.story .storyDesc{
+.story .storyDesc {
   margin-top: 8px;
 }
 
-.chat{
-   background-image: url(/assets/chat4.png);
-   background-repeat: no-repeat;
-   background-size: 13px 13px;
+.chat {
+  background-image: url(/assets/chat4.png);
+  background-repeat: no-repeat;
+  background-size: 13px 13px;
 }
 
-.assigned{
-   float:right;
-   text-align: right;
+.assigned {
+  float: right;
+  text-align: right;
 }
 
 .bottom-panel {
@@ -160,13 +148,12 @@
   top: 10px;
 }
 
-
 /*i {
   background-image: url(/assets/glyphicons-halflings-sprite.png);
 }*/
 
 [class^="icon-"] {
-background-image: url(/assets/glyphicons-halflings.png);
+  background-image: url(/assets/glyphicons-halflings.png);
 }
 
 //Overrides
@@ -176,12 +163,12 @@ background-image: url(/assets/glyphicons-halflings.png);
 }*/
 
 .x-bar {
-  background-image: -webkit-gradient(radial, 100% 50%,100,-50% 50%,100, from(rgb(0, 0, 0)), to(rgb(255, 255, 255)));
+  background-image: -webkit-gradient(radial, 100% 50%, 100, -50% 50%, 100, from(rgb(0, 0, 0)), to(rgb(255, 255, 255)));
   background-image: -webkit-radial-gradient(0% 50%, rgb(255, 255, 255), rgb(0, 0, 0));
 
   width: 98.7%;
   min-height: 20px;
-  min-width:90%;
+  min-width: 90%;
   float: left;
   margin-top: -2px;
   text-align: center;
@@ -215,4 +202,40 @@ background-image: url(/assets/glyphicons-halflings.png);
   background-image: -webkit-gradient(linear, left top, left bottom, from(rgb(255, 255, 255)), to(rgb(0, 0, 0)));
   background-image: -webkit-linear-gradient(top, rgb(255, 255, 255), rgb(0, 0, 0));
 
+}
+
+#zynga-storymap-container {
+  width: 100%;
+//height: 600px; //border: 1px solid black; position: absolute;
+//top: 20px; //left: 20px; overflow: hidden;
+
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
+#content {
+//background: white; //width: 200%; height: 2000px;
+  padding-top: 3px;
+
+  -webkit-transform-origin: left top;
+  -webkit-transform: translateZ(0);
+  -moz-transform-origin: left top;
+  -moz-transform: translateZ(0);
+  -ms-transform-origin: left top;
+  -ms-transform: translateZ(0);
+  -o-transform-origin: left top;
+  -o-transform: translateZ(0);
+  transform-origin: left top;
+  transform: translateZ(0);
+}
+
+.cell {
+  width: 300px;
+  height: 200px;
+  display: inline-block;
+  text-align: center;
+  line-height: 100px;
 }

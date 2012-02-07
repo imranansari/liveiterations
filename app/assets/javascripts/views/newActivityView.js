@@ -47,6 +47,10 @@ define([
 
             this.model.save();
             this.close();
+            //$('#content').css('width', $('#content').css('width') + 300 +'px');
+            $('#content').css('width', ($('.storyContainer').size() * $('.storyContainer').width()) + 350 + 'px');
+            window.zyngaScroller.setDimensions(zyngaStorymapContainer.clientWidth, zyngaStorymapContainer.clientHeight, content.offsetWidth, content.offsetHeight);
+
         },
 
         deleteActivity:function(){
