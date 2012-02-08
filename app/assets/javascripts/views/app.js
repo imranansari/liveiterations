@@ -63,7 +63,7 @@ define([
 
         $('.activityItemMenu').live('touchstart', function () {
             $('.activityItemMenu').popover({trigger:'manual', placement:'bottom', content:$('#example').html()});
-            $('.activityItemMenu').popover('hide');
+            $('.activityItemMenu').not(this).popover('hide');
             $(this).popover('show');
         });
 
@@ -107,11 +107,13 @@ define([
                     return;
                 }
 
+                //$('.activityItemMenu').popover('hide');
                 window.zyngaScroller.doTouchStart(e.touches, e.timeStamp);
                 e.preventDefault();
             }, false);
 
             document.addEventListener("touchmove", function (e) {
+                $('.activityItemMenu').popover('hide');
                 window.zyngaScroller.doTouchMove(e.touches, e.timeStamp);
             }, false);
 
