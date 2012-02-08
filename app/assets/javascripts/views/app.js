@@ -27,10 +27,25 @@ define([
     'views/storyTasksView',
     'views/newActivityView',
     'views/newTaskView',
-    'text!templates/menu.html'
-], function ($, _, Backbone, StoryActivity, StoryActivities, StoryTasks, StoryActivityView, StoryActivitiesView, StoryTasksView, NewActivityView, NewTaskView, menuHtml) {
+    'text!templates/menu.html',
+    'livequery'
+], function ($, _, Backbone, StoryActivity, StoryActivities, StoryTasks, StoryActivityView, StoryActivitiesView, StoryTasksView, NewActivityView, NewTaskView, menuHtml, livequery) {
 
     $(document).ready(function () {
+        var isTouch = ('createTouch' in document) ? true : false;
+
+
+        $('.touchable').livequery(function(){
+            //alert(isTouch);
+            if(isTouch){
+              $('.clickable').hide();
+              $('.touchable').show();
+          } else {
+              $('.clickable').show();
+              $('.touchable').hide();
+          }
+        });
+
 
         $("#topmenu").html(menuHtml);
 
@@ -45,11 +60,18 @@ define([
          $(this).parent(".dropdown").toggleClass("open");
          })*/
 
-        /*        $('.addUserTask').popover({trigger: 'manual', placement: 'bottom', content: $('#example').html()});
-         $('.addUserTask').live('mouseover', function(){
-         $('.addUserTask').popover('hide');
-         $(this).popover('show');
-         });*/
+
+        $('.activityItemMenu').live('touchstart', function () {
+            $('.activityItemMenu').popover({trigger:'manual', placement:'bottom', content:$('#example').html()});
+            $('.activityItemMenu').popover('hide');
+            $(this).popover('show');
+        });
+
+        /*        $("a[rel=popover]")
+         .popover()
+         .click(function(e) {
+         e.preventDefault()
+         })*/
 
         //zyngaScroller($);
 
