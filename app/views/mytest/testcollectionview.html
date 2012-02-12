@@ -1,0 +1,20 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>Test BackboneCollections</title>
+      <%= requirejs_include_tag "testCollectionViewSimple" %>
+      <%= csrf_meta_tags %>
+</head>
+<body>
+        <b>My Board</b>
+
+<div id="myInbox"></div>
+<div id="myTasks"></div>
+
+<input type="button" id="newTask" value="new Task">
+<input type="button" id="newActivity" value="new Act">
+<input type="button" id="removeActivity" value="remove Act">
+<input type="button" id="updateActivity" value="update Act">
+</body>
+</html>

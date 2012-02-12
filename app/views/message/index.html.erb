@@ -1,0 +1,97 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <title>Project Timeline</title>
+  <%= requirejs_include_tag "messaging_app" %>
+  <%= csrf_meta_tags %>
+
+  <%= stylesheet_link_tag "bootstrap" %>
+  <%= stylesheet_link_tag "bootstrap-responsive" %>
+  <%= stylesheet_link_tag "storymap" %>
+</head>
+<body>
+<div id="topmenu"></div>
+<div id="container" class="container">
+  <div id="main" role="main">
+    <div class="row-fluid">
+      <div class="span3">
+        <div class="well" style="padding: 8px 0;">
+          <ul class="nav nav-list">
+            <li class="nav-header">Team</li>
+            <li>
+              <a href="#"><img src="https://twimg0-a.akamaihd.net/profile_images/1181071089/image_normal.jpg" width="30" height="30" alt="">
+                Imran</a></li>
+            </li>
+            <li>
+              <a href="#"><img src="http://placehold.it/20x20" alt=""> Eirc</a></li>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="well" style="padding: 8px 0;">
+            <ul class="nav nav-list">
+              <li class="nav-header">Tags</li>
+              <li>
+                <a href="#"> #bug</a>
+              </li>
+              <li>
+                <a href="#"> #SecureStorage</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="span6">
+        <div class="well">
+          <h2>iEngage
+            <small>Timeline</small>
+          </h2>
+        </div>
+
+        <div id="newMessage"></div>
+
+        <div id="messages" class="well" style="background-color: white"></div>
+
+      </div>
+      <div class="span3">
+
+        <div>
+          <div class="well" style="padding: 8px 0;">
+            <ul class="nav nav-list">
+              <li class="nav-header">Tasks</li>
+              <div id="newTask">
+                <input type="text" style="width: 80%" placeholder="New Task"/>
+              </div>
+              <li>
+                <a><input type="checkbox"> Setup Test Project and do some other thing as well</a>
+              </li>
+              <li>
+                <a><input type="checkbox"> Deploy to App Store</a>
+              </li>
+            </ul>
+            <ul class="nav nav-list">
+              <li class="nav-header">Completed Tasks</li>
+              <li>
+                <a><input type="checkbox" checked="true"> Setup Test Project</a>
+              </li>
+              <li>
+                <a>
+                  <input type="checkbox" checked="true">
+                  Schedule Load Test</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!--/span-->
+    </div>
+  </div>
+  <!--/row-->
+
+</div>
+</body>
+</html>
