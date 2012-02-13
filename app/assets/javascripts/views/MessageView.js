@@ -4,24 +4,30 @@ define([
     'backbone',
     'handlebars',
     'modelbinding',
-    'text!templates/newmessage.html',
+    'text!templates/message.html',
     'models/message'
 ], function ($, _, Backbone, handlebars, modelbinding, htmlTpl, Message) {
 
     Backbone.ModelBinding = require('modelbinding');
 
-    var NewMessageView = Backbone.View.extend({
-        el: "#newMessage",
+    var MessageView = Backbone.View.extend({
 
         initialize:function (options) {
             this.template = Handlebars.compile(htmlTpl);
-            this.model = new Message();
+            _.bindAll(this, 'render', 'remove');
+            this.model.bind('change', this.render);
+            this.model.bind('destroy', this.remove);
         },
         render:function () {
-            var content = this.template();
+            var content = this.template(this.model.toJSON());
+
             $(this.el).html(content);
-            Backbone.ModelBinding.bind(this);
+            //Backbone.ModelBinding.bind(this);
             return this;
+        },
+
+        remove:function () {
+            $(this.el).remove();
         },
 
         events:{
@@ -37,5 +43,5 @@ define([
 
     });
 
-    return NewMessageView;
+    return MessageView;
 });
