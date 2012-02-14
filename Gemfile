@@ -55,3 +55,5 @@ group :production do
   gem 'therubyracer-heroku' ">= 0.9.8"
 end
 =end
+
+gem 'carrierwave-mongoid', :require => 'carrierwave/mongoid'

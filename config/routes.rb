@@ -11,16 +11,18 @@ Liveiterations::Application.routes.draw do
   match 'storymap/activity/:id', :to => 'storymap#deleteActivity',  :via => :delete
 
 
+  get "message/index"
   match 'message', :to => 'message#new', format: :json, :via => :post
   match 'message', :to => 'message#list', format: :json, :via => :get
-
-  get 'message/index'
-
 
 
   get 'mytest/testcollectionview'
 
-  get "project/portfolio"
+  get "project/index"
+  match 'project', :to => 'project#list', format: :json, :via => :get
+  match 'project', :to => 'project#new', format: :json, :via => :post
+  match 'project', :to => 'project#update', format: :json, :via => :put
+  match 'project', :to => 'project#delete', format: :json, :via => :delete
 
 
 

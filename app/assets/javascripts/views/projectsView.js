@@ -4,14 +4,13 @@ define([
     'backbone',
     'handlebars',
     'modelbinding',
-    'text!templates/newmessage.html',
-    'models/message',
-    'views/messageView'
-], function ($, _, Backbone, handlebars, modelbinding, htmlTpl, Message, MessageView) {
+    'models/project',
+    'views/projectView'
+], function ($, _, Backbone, handlebars, modelbinding, Project, ProjectView) {
 
     Backbone.ModelBinding = require('modelbinding');
 
-    var MessagesView = Backbone.View.extend({
+    var ProjectsView = Backbone.View.extend({
         initialize:function (options) {
             _.bindAll(this, 'render', 'addAll', 'addOne');
             this.collection.bind('add', this.addOne);
@@ -25,7 +24,7 @@ define([
             this.collection.each(this.addOne);
         },
         addOne:function (model) {
-            view = new MessageView({model:model});
+            view = new ProjectView({model:model});
             view.render();
             $(this.el).prepend(view.el);
             model.bind('remove', view.remove);
@@ -34,5 +33,5 @@ define([
 
     });
 
-    return MessagesView;
+    return ProjectsView;
 });

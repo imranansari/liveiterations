@@ -6,4 +6,5 @@ class Project
   field :name
   field :desc
 
+  embeds_one :pconfig
 end

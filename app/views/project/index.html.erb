@@ -1,91 +1,46 @@
-<div class="row-fluid">
-  <div class="span3">
-    <div class="well sidebar-nav">
-      <ul class="thumbnails">
-        <li class="span10">
-          <a href="#" class="thumbnail">
-            <img src="http://placehold.it/250x180" alt="">
-          </a>
-        </li>
-        <li class="span10">
-          <a href="#" class="thumbnail">
-            <img src="http://placehold.it/250x180" alt="">
-          </a>
-        </li>
-        <li class="span10">
-          <a href="#" class="thumbnail">
-            <img src="http://placehold.it/250x180" alt="">
-          </a>
-        </li>
-        <li class="span10">
-          <a href="#" class="thumbnail">
-            <img src="http://placehold.it/250x280" alt="">
-          </a>
-        </li>
-      </ul>
-    </div>
-    <!--/.well -->
-  </div>
-  <!--/span-->
-  <div class="span9">
-    <div class="well">
-      <h1>BCP Field Contacts</h1>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <title>Project Timeline</title>
+  <%= requirejs_include_tag "project_app" %>
+  <%= csrf_meta_tags %>
 
-      <p>This is a template for a simple marketing or informational website. It includes a large callout called the hero
-        unit and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
+  <%= stylesheet_link_tag "bootstrap" %>
+  <%= stylesheet_link_tag "bootstrap-responsive" %>
+  <%= stylesheet_link_tag "storymap" %>
 
-    </div>
-    <div class="well">
-      <div class="tabbable">
-        <ul class="nav nav-tabs">
-          <li class="active"><a href="#1" data-toggle="tab">Time Line</a></li>
-          <li><a href="#2" data-toggle="tab">Meetings</a></li>
-          <li><a href="#3" data-toggle="tab">Documents</a></li>
-          <li class="dropdown">
-            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Dropdown <b class="caret"></b></a>
-            <ul class="dropdown-menu">
-              <li><a href="#">Action</a></li>
-              <li><a href="#">Another action</a></li>
-              <li><a href="#4">Something else here</a></li>
-              <li class="divider"></li>
-              <li><a href="#">Separated link</a></li>
-            </ul>
-          </li>
-        </ul>
-        <div class="tab-content">
-          <div class="tab-pane active" id="1">
-            <p>I'm in Section 1.</p>
-          </div>
-          <div class="tab-pane" id="2">
-            <p>Howdy, I'm in Section 2.</p>
-          </div>
-          <div class="tab-pane" id="3">
+  <style type="text/css">
 
-            <div class="tabbable tabs-left">
-              <ul class="nav nav-tabs">
-                <li class="active"><a href="#lA" data-toggle="tab">BRDs</a></li>
-                <li class=""><a href="#lB" data-toggle="tab">WireFrames</a></li>
-                <li class=""><a href="#lC" data-toggle="tab">Design Docs</a></li>
-              </ul>
-              <div class="tab-content">
-                <div class="tab-pane" id="lA">
-                  <p>I'm in Section A.</p>
-                </div>
-                <div class="tab-pane" id="lB">
-                  <p>Howdy, I'm in Section B.</p>
-                </div>
-                <div class="tab-pane active" id="lC">
-                  <p>What up girl, this is Section C.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+  </style>
+
+  <meta name="viewport" content="initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0"/>
+
+</head>
+<body>
+<div id="viewporter">
+  <div id="topmenu"></div>
+  <div id="container" class="container">
+    <div id="main" role="main">
+
+      <div class="page-header">
+        <h2>Projects
+          <small></small>
+          <div class="toolbar" style="float: right"><a class="btn" id="addProject">Add Project</a></div>
+        </h2>
       </div>
 
-      <!--/span-->
+      <div class="span12">
+        <ul class="thumbnails" id="projects">
+
+        </ul>
+
+      </div>
+
     </div>
     <!--/row-->
+
   </div>
-  <!--/span-->
-</div><!--/row-->
+</div>
+</body>
+</html>
