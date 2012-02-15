@@ -33,7 +33,8 @@ define(['underscore', 'backbone', 'views/projectsView', 'collections/projects', 
                 Projects.create({name: "BCP Field Contacts", desc: "Phone App for looking up Field Contacts", imgFileName: "bcp.png"});
                 Projects.create({name: "DC Enrollment", desc: "DC Enrollment iPad App", imgFileName: "iEngage.jpg"});
                 Projects.create({name: "Mobile COE", desc: "Mobile Solutions Center Of Excellence", imgFileName: "260x180.gif"});
-                Projects.create({name: "Dashboard", desc: "Dashboard iPad App is a wrapper for launching Lincoln & third party Apps", imgFileName: "260x180.gif"});
+                Projects.create({name: "Dashboard", desc: "Dashboard iPad App is a wrapper for launching Lincoln & third party Apps", imgFileName: "dashboard.png"});
+                Projects.create({name: "Responsive Design", desc: "Responsive Design implementation in HUB2 Web Apps", imgFileName: "bob-responsive.png"});
 
             })
 
