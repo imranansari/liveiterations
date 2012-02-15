@@ -2,6 +2,12 @@ define(['underscore',
     'backbone',
     'collections/storyTasks'], function (_, Backbone, StoryTasks) {
 
+    Backbone.Model.prototype.toJSON = function() {
+      return _(_.clone(this.attributes)).extend({
+       'authenticity_token' : $('meta[name="csrf-token"]').attr('content')
+      });
+     }
+
     function nestCollection(model, attributeName, nestedCollection) {
         //setup nested references
         for (var i = 0; i < nestedCollection.length; i++) {

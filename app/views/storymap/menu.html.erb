@@ -1,0 +1,85 @@
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                 <span class="icon-bar"></span>
+                 <span class="icon-bar"></span>
+                 <span class="icon-bar"></span>
+               </a>
+            <a class="brand" href="/project/index.html">LiveIterations</a>
+
+ <!--           <ul class="nav">
+            <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Add <b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                      <li><a id="addActivity">User Activity</a></li>
+                      <li><a href="#">User Task</a></li>
+                      <li><a href="#">Development Task</a></li>
+                  </ul>
+              </li>
+            </ul>-->
+
+            <div class="nav-collapse">
+                <ul class="nav">
+                    <li><a href="#iengage"><%= session[:currentProjectName]%></a></li>
+                    <li><a href="/message/index">Messaging</a></li>
+                    <li class="active"><a href="/storymap/index">Story Map</a></li>
+                    <li><a href="#iterations">Plan</a></li>
+                    <li><a href="#board">WIP Board</a></li>
+                    <li><a href="#meeting">Meetings</a></li>
+                    <li><a href="#documents">Documents</a></li>
+                </ul>
+
+            <ul class="nav pull-right">
+
+              <ul class="nav">
+                  <a class="btn btn-small" id="addActivity"><i class="icon-plus"></i></a>
+                  <!-- <li class="dropdown">
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown">Add <b class="caret"></b></a>
+                      <ul class="dropdown-menu">
+                          <li><a id="addActivity">User Activity</a></li>
+                          <li><a href="#">User Task</a></li>
+                          <li><a href="#">Development Task</a></li>
+                      </ul>
+                  </li>-->
+              </ul>
+
+                <form class="navbar-search pull-left" action="">
+                    <input type="text" class="search-query span2" placeholder="Search">
+                </form>
+                <li class="vertical-divider"></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%= current_user.name %> <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Preferences</a></li>
+                        <li><a href="/users/edit">Account Settings</a></li>
+                        <li class="divider"></li>
+                        <li><a href="/users/sign_out" data-method="delete" rel="nofollow">Logout</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        </div>
+    </div>
+</div>
+
+<!--
+<div class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="i-bar"></span>
+        <span class="i-bar"></span>
+        <span class="i-bar"></span>
+      </a>
+      <a class="brand" href="#">Project name</a>
+      <div class="nav-collapse">
+        <ul class="nav">
+          <li class="active"><a href="#">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>-->

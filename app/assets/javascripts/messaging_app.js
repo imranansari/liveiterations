@@ -11,7 +11,7 @@ define(['underscore', 'backbone', 'views/newMessageView', 'views/messagesView', 
 
         $(document).ready(function () {
 
-            $("#topmenu").html(menuHtml);
+            //$("#topmenu").html(menuHtml);
 
             var newMessageView = new NewMessageView();
             newMessageView.render();

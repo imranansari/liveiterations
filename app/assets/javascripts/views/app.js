@@ -47,7 +47,7 @@ define([
         });
 
 
-        $("#topmenu").html(menuHtml);
+        //$("#topmenu").html(menuHtml);
 
         $("#addActivity").click(function () {
 

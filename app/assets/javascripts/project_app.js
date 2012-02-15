@@ -11,7 +11,7 @@ define(['underscore', 'backbone', 'views/projectsView', 'collections/projects', 
 
         $(document).ready(function () {
 
-            $("#topmenu").html(menuHtml);
+            //$("#topmenu").html(menuHtml);
 
 
             /*        //var messages = new Messages();

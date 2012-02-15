@@ -24,6 +24,8 @@ Liveiterations::Application.routes.draw do
   match 'project', :to => 'project#update', format: :json, :via => :put
   match 'project', :to => 'project#delete', format: :json, :via => :delete
 
+  match 'project/savesession', :to => 'project#savesession', format: :json, :via => :post
+
 
 
   #get \"users\/show\"

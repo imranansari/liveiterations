@@ -15,11 +15,11 @@
 </head>
 <body>
 <div id="viewporter">
-  <div id="topmenu"></div>
+  <div id="topmenu"><%= render :file => '/message/menu' %></div>
   <div id="container" class="container">
     <div id="main" role="main">
       <div class="page-header">
-        <h2>iEngage
+        <h2><%= session[:currentProjectName]%>
           <small>Messages</small>
         </h2>
       </div>

@@ -3,7 +3,7 @@
 <html>
 <head>
   <title>Project Timeline</title>
-  <%= requirejs_include_tag "project_app" %>
+  <%= requirejs_include_tag "project_app"%>
   <%= csrf_meta_tags %>
 
   <%= stylesheet_link_tag "bootstrap" %>
@@ -19,7 +19,8 @@
 </head>
 <body>
 <div id="viewporter">
-  <div id="topmenu"></div>
+  <div id="topmenu"><%= render :file => '/project/menu' %></div>
+
   <div id="container" class="container">
     <div id="main" role="main">
 

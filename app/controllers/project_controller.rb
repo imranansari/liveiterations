@@ -1,4 +1,5 @@
 class ProjectController < ApplicationController
+  before_filter :authenticate_user!
 
   def index
     render :layout => false
@@ -55,6 +56,19 @@ class ProjectController < ApplicationController
 
         deleteProject.destroy
         render json: deleteProject
+      }
+    end
+  end
+
+  def savesession
+    respond_to do |format|
+      format.json{
+        project = JSON.parse(params[:payload])
+        #puts project
+        #puts project["name"]
+        session[:currentProjectId] = project["id"]
+        session[:currentProjectName] = project["name"]
+        render json: params[:payload]
       }
     end
   end
