@@ -34,12 +34,14 @@ class StorymapController < ApplicationController
   def newActivity
     respond_to do |format|
       format.json {
-        puts params["projectId"]
+        #puts params["projectId"]
 
         activity = JSON.parse(request.body.read)
+        puts activity
+
         newActivity = UserActivity.create(activity)
-        newActivity.projectId = params["projectId"]
-        project = Project.where(:_id => params["projectId"]).first
+        #newActivity.projectId = params["projectId"]
+        project = Project.where(:_id => newActivity["projectId"]).first
         newActivity.boardOrder = project.pconfig.inc(:storyCount, 1)
         puts newActivity.boardOrder
 =begin

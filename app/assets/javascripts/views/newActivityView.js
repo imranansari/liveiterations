@@ -42,9 +42,11 @@ define([
             //console.log(JSON.stringify(this.model));
 
             if (this.options.mode != 'edit') {
+                this.model.set({projectId: PROJECT_ID});
                 StoryActivities.add([this.model]);
             }
 
+            //?projectId='+PROJECT_ID
             this.model.save();
             this.close();
             //$('#content').css('width', $('#content').css('width') + 300 +'px');
