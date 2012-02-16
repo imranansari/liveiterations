@@ -19,7 +19,10 @@ class StorymapController < ApplicationController
 
   def activity
     puts "activities display"
-    @userActivities = UserActivity.all.order_by([:created_at, :asc])
+
+    puts params["projectId"]
+
+    @userActivities = UserActivity.where(projectId: params["projectId"]).all.order_by([:created_at, :asc])
 
     respond_to do |format|
       format.json { render json: @userActivities }
@@ -31,8 +34,11 @@ class StorymapController < ApplicationController
   def newActivity
     respond_to do |format|
       format.json {
+        puts params["projectId"]
+
         activity = JSON.parse(request.body.read)
         newActivity = UserActivity.create(activity)
+        newActivity.projectId = params["projectId"]
 =begin
         newActivity.storyTasks.build(name: "Task1")
         newActivity.storyTasks.build(name: "Task2")

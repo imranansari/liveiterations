@@ -6,6 +6,7 @@ class UserActivity
   field :order
   field :name
   field :desc
+  field :projectId
 
   embeds_many :storyTasks
 

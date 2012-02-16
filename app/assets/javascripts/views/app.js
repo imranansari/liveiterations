@@ -2,7 +2,7 @@ getActivitiesFromService = function ($) {
     var data;
 
     $.ajax({
-        url:'/storymap/activity',
+        url:'/storymap/activity?projectId='+PROJECT_ID,
         type:'GET',
         dataType:'json',
         async:false,

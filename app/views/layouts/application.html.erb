@@ -14,6 +14,10 @@
   <%= stylesheet_link_tag "storymap" %>
   <%= requirejs_include_tag "application" %>
   <%= csrf_meta_tags %>
+
+  <script language="javascript">
+    PROJECT_ID = "<%= session[:currentProjectId] %>";
+  </script>
 </head>
 <body>
 <div id="viewporter">
