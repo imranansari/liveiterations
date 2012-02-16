@@ -2,6 +2,7 @@ class StorymapController < ApplicationController
   before_filter :authenticate_user!
 
   def index
+    render :layout => false
   end
 
   def test
@@ -43,6 +44,7 @@ class StorymapController < ApplicationController
         #newActivity.projectId = params["projectId"]
         project = Project.where(:_id => newActivity["projectId"]).first
         newActivity.boardOrder = project.pconfig.inc(:storyCount, 1)
+        newActivity.modifiedBy = activity["modifiedBy"]
         puts newActivity.boardOrder
 =begin
         newActivity.storyTasks.build(name: "Task1")
@@ -63,6 +65,9 @@ class StorymapController < ApplicationController
         updateActivity = UserActivity.where(:_id => activity["_id"]).first
 
         updateActivity.name = activity["name"]
+        updateActivity.desc = activity["desc"]
+        updateActivity.modifiedBy = activity["modifiedBy"]
+        updateActivity.boardOrder = activity["boardOrder"]
         updateActivity.storyTasks = activity["storyTasks"]
 
         updateActivity.save

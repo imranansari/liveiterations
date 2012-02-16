@@ -40,7 +40,7 @@ define([
             var auth = $('meta[name="csrf-token"]').attr('content');
 
 
-            $.post('/project/savesession' + "?&authenticity_token=" + auth, {payload:JSON.stringify({id:this.model.id, name:this.model.get('name')})}, function (data) {
+            $.get('/project/savesession' + "?authenticity_token=" + auth, {payload:JSON.stringify({id:this.model.id, name:this.model.get('name')})}, function (data) {
                 console.log('a');
                 window.location.href = "/message/index";
             });

@@ -30,6 +30,17 @@
                         <textarea class="input-xlarge" name="desc" id="desc" rows="3"></textarea>
                     </div>
                 </fieldset>
+                {{#if this.editable}}
+                <fieldset class="control-group">
+                    <label class="control-label" for="name">Board Order (Hack)</label>
+
+                    <div class="controls">
+                        <input class="input-xlarge focused" id="boardOrder" name="boardOrder" type="text"
+                               placeholder="Board Order"
+                               required/>
+                    </div>
+                </fieldset>
+                {{/if}}
             </form>
         </div>
         <div class="modal-footer">

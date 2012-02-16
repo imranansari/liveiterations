@@ -1,16 +1,61 @@
-<div class="x-bar">
-  USER ACTIVITY
-  <span class="arrowRight"></span>
- </div>
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-<!--<div class="y-bar">test</div>
-<div class="arrowDown"></div>-->
+  <meta name="viewport" content="initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0"/>
 
-<div id="zynga-storymap-container">
-  <div id="content">
-    <div id="storyActivitiesList" class="row">
+  <title>LiveIterations</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <%= stylesheet_link_tag "bootstrap" %>
+  <%= stylesheet_link_tag "bootstrap-responsive" %>
+  <%= stylesheet_link_tag "storymap" %>
+  <%= requirejs_include_tag "application" %>
+  <%= csrf_meta_tags %>
+
+  <script language="javascript">
+    PROJECT_ID = "<%= session[:currentProjectId] %>";
+    CURRENT_USER_ID = "<%= current_user.id %>";
+  </script>
+</head>
+<body>
+<div id="viewporter">
+  <div id="topmenu"><%= render :file => '/storymap/menu' %></div>
+
+  <div id="container" class="container storymap">
+
+    <div id="main" role="main">
+
+      <div class="x-bar">
+        USER ACTIVITY
+        <span class="arrowRight"></span>
+       </div>
+
+      <!--<div class="y-bar">test</div>
+      <div class="arrowDown"></div>-->
+
+      <div id="zynga-storymap-container">
+        <div id="content">
+          <div id="storyActivitiesList" class="row">
+          </div>
+        </div>
+      </div>
+
+      <div id="tempContainer"></div>
+
     </div>
+
   </div>
+  <!--! end of #container -->
 </div>
 
-<div id="tempContainer"></div>
+<div id="example" style="display: none;">
+  <a class="btn small addUserTask">Add User Task</a>
+  <a class="btn small editActivity">Edit Activity</a>
+</div>
+
+<div id="testList"></div>
+</body>
+</html>

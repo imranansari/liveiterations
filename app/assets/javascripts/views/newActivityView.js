@@ -41,6 +41,8 @@ define([
         save:function () {
             //console.log(JSON.stringify(this.model));
 
+            this.model.set({modifiedBy : CURRENT_USER_ID});
+
             if (this.options.mode != 'edit') {
                 this.model.set({projectId: PROJECT_ID});
                 StoryActivities.add([this.model]);
