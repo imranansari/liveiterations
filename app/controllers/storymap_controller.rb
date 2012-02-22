@@ -127,4 +127,25 @@ class StorymapController < ApplicationController
     end
   end
 
+=begin
+  def importData
+
+    respond_to do |format|
+      format.json {
+        jsonData = File.read(File.join('public', 'activity.json'))
+        activities = JSON.parse(jsonData)
+
+        #puts policy[0]["name"]
+
+        #newEpic = Policy.create(enrollments[0])
+
+        UserActivity.collection.insert(activities)
+      }
+
+    end
+
+
+  end
+=end
+
 end
