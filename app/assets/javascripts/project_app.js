@@ -28,19 +28,42 @@ define(['underscore', 'backbone', 'views/projectsView', 'collections/projects', 
                 }
             });
 
-            $("#addProject").click(function(){
-/*
-                Projects.create({name: "Visualizer", desc: "Sales Demo tool Tablet App for Annuities", imgFileName: "visualizer.png"});
-                Projects.create({name: "BCP Field Contacts", desc: "Phone App for looking up Field Contacts", imgFileName: "bcp.png"});
-                Projects.create({name: "DC Enrollment", desc: "DC Enrollment iPad App", imgFileName: "iEngage.jpg"});
-                Projects.create({name: "Mobile COE", desc: "Mobile Solutions Center Of Excellence", imgFileName: "260x180.gif"});
-                Projects.create({name: "Dashboard", desc: "Dashboard iPad App is a wrapper for launching Lincoln & third party Apps", imgFileName: "dashboard.png"});
-                Projects.create({name: "Responsive Design", desc: "Responsive Design implementation in HUB2 Web Apps", imgFileName: "bob-responsive.png"});
-*/
-                Projects.create({name: "Confererence App", desc: "Conference App Designed for IT Leadership Forum", imgFileName: "confApp.png"});
+            $("#addProject").click(function () {
+
+
+                Projects.create({name:"Visualizer", desc:"Sales Demo iPad & Web App for Annuities", imgFileName:"visualizer.png", status:"Production"});
+
+                sleep(2000);
+
+                Projects.create({name:"Dashboard", desc:"Dashboard iPad App is a launcher for Lincoln & Approved Third party Apps", imgFileName:"dashboard.png", status:"Testing"});
+
+
+                //Projects.create({name: "Mobility COE", desc: "Mobility Center Of Excellence", imgFileName: "coe.png", status: "Testing"});
+
+
+                sleep(2000);
+                Projects.create({name:"BCP Field Contacts", desc:"iOS & Android Hybrid App for Field Contacts", imgFileName:"bcp.png", status:"Development"});
+
+                sleep(2000);
+                Projects.create({name:"Conference App", desc:"Conference App Designed for IT Leadership Forum", imgFileName:"realtime1.png", status:"Production"});
+
+                //sleep(2000);
+                //Projects.create({name:"Responsive Design Framework", desc:"Custom Framework for Mobile Enabling HUB2 Apps", imgFileName:"responsive-design.png", status:"Development"});
+
+                sleep(2000);
+                Projects.create({name:"iEngage", desc:"LRPS Enrollment iPad App", imgFileName:"iengage.png", status:"Definition"});
+
+                sleep(2000);
+                Projects.create({name:"Mobile CRM", desc:"Extending 3rd Party Application to include Holdings Information", imgFileName:"crm.png", status:"Production"});
 
 
             })
+
+            function sleep(ms) {
+                var dt = new Date();
+                dt.setTime(dt.getTime() + ms);
+                while (new Date().getTime() < dt.getTime());
+            }
 
         });
 

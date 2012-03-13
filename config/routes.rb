@@ -19,6 +19,12 @@ Liveiterations::Application.routes.draw do
   get 'mytest/testcollectionview'
 
   get "project/index"
+  get "project/components"
+
+  get "sp/components"
+  get "sp/index"
+
+
   match 'project', :to => 'project#list', format: :json, :via => :get
   match 'project', :to => 'project#new', format: :json, :via => :post
   match 'project', :to => 'project#update', format: :json, :via => :put

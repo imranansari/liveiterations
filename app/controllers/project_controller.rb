@@ -24,7 +24,7 @@ class ProjectController < ApplicationController
   def list
     respond_to do |format|
       format.json {
-        projects = Project.all.order_by([:created_at,:asc])
+        projects = Project.all.order_by([:created_at,:desc])
 
         render json: projects
       }
