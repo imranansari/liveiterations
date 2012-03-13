@@ -1,0 +1,150 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <title>Project Timeline</title>
+  <%= csrf_meta_tags %>
+
+  <%= stylesheet_link_tag "bootstrap" %>
+  <%= stylesheet_link_tag "bootstrap-responsive" %>
+  <%= stylesheet_link_tag "storymap" %>
+
+  <style type="text/css">
+
+  </style>
+
+  <meta name="viewport" content="initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0"/>
+
+</head>
+<body>
+<div id="viewporter">
+  <div id="topmenu"><%= render :file => '/project/menu' %></div>
+
+  <div id="container" class="container">
+    <div id="main" role="main">
+
+      <div class="page-header">
+        <h2>Reusable Components & Frameworks
+          <small></small>
+
+        </h2>
+      </div>
+
+      <div class="span12">
+        <ul class="thumbnails" id="projects">
+          <div>
+            <li class="span3">
+
+              <div class="thumbnail wrapper" style="min-height: 250px" id="project">
+                <div class="ribbon-wrapper">
+                  <div class="ribbon-Development">Development</div>
+                </div>
+                <a class="thumbnail">
+                  <img src="/assets/uploads/project-icons/hybrid-framework.png">
+                </a>
+
+                <div class="caption">
+                  <h4>iOS Custom Hybrid Framework</h4>
+
+                  <p>For developing iOS Hybrid Apps with Native & HTML5 Technologies</p>
+
+                </div>
+              </div>
+            </li>
+          </div>
+          <div>
+            <li class="span3">
+
+              <div class="thumbnail wrapper" style="min-height: 250px" id="project">
+                <div class="ribbon-wrapper">
+                  <div class="ribbon-Development">Development</div>
+                </div>
+                <a class="thumbnail">
+                  <img src="/assets/uploads/project-icons/realtime1.png">
+                </a>
+
+                <div class="caption">
+                  <h4>Real Time Messaging Framework</h4>
+
+                  <p>Cross platform Mobile & Desktop Web Real Time Messaging framework</p>
+
+                </div>
+              </div>
+            </li>
+          </div>
+
+          <div>
+            <li class="span3">
+
+              <div class="thumbnail wrapper" style="min-height: 250px" id="project">
+                <div class="ribbon-wrapper">
+                  <div class="ribbon-Development">Development</div>
+                </div>
+                <a class="thumbnail">
+                  <img src="/assets/uploads/project-icons/responsive-design.png">
+                </a>
+
+                <div class="caption">
+                  <h4>Responsive Design Framework</h4>
+
+                  <p>Custom Framework for Mobile Enabling HUB2 Apps</p>
+
+                </div>
+              </div>
+            </li>
+          </div>
+
+
+
+          <div>
+            <li class="span3">
+
+              <div class="thumbnail wrapper" style="min-height: 250px" id="project">
+                <div class="ribbon-wrapper">
+                  <div class="ribbon-Definition">Definition</div>
+                </div>
+                <a class="thumbnail">
+                  <img src="/assets/uploads/project-icons/offline-access.png">
+                </a>
+
+                <div class="caption">
+                  <h4>iOS Offline Access Security Module</h4>
+
+                  <p>Includes UI & Secure persistence components for Offline access</p>
+
+                </div>
+              </div>
+            </li>
+          </div>
+          <div>
+            <li class="span3">
+
+              <div class="thumbnail wrapper" style="min-height: 250px" id="project">
+                <div class="ribbon-wrapper">
+                  <div class="ribbon-Definition">Definition</div>
+                </div>
+                <a class="thumbnail">
+                  <img src="/assets/uploads/project-icons/secure-storage.png">
+                </a>
+
+                <div class="caption">
+                  <h4>iOS Secure Storage Module</h4>
+
+                  <p>iOS Module for secure encrypted persistence of private data</p>
+
+                </div>
+              </div>
+            </li>
+          </div>
+
+        </ul>
+
+      </div>
+
+    </div>
+    <!--/row-->
+
+  </div>
+</div>
+</body>
+</html>
