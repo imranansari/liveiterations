@@ -23,6 +23,7 @@ Liveiterations::Application.routes.draw do
 
   get "sp/components"
   get "sp/index"
+  match 'sp', :to => 'sp#list', format: :json, :via => :get
 
 
   match 'project', :to => 'project#list', format: :json, :via => :get
