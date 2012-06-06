@@ -36,7 +36,8 @@ define([
             messageDesc = $('#messageDesc').val();
             $('#messageDesc').val('');
             //Messages.add(new Message({desc: messageDesc, dateTime: new Date()}));
-            Messages.create({text: messageDesc, dateTime: new Date()});
+
+            Messages.create({text: messageDesc, projectId: PROJECT_ID, modifiedBy : CURRENT_USER_ID,dateTime: new Date()});
         }
 
 

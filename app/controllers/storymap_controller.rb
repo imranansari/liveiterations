@@ -23,8 +23,8 @@ class StorymapController < ApplicationController
 
     puts params["projectId"]
 
-    #@userActivities = UserActivity.where(projectId: params["projectId"]).all.order_by([:boardOrder, :asc])
-    @userActivities = UserActivity.all.order_by([:boardOrder, :asc])
+    @userActivities = UserActivity.where(projectId: params["projectId"]).all.order_by([:boardOrder, :asc])
+    #@userActivities = UserActivity.all.order_by([:boardOrder, :asc])
 
     respond_to do |format|
       format.json { render json: @userActivities }

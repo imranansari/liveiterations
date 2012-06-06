@@ -6,4 +6,15 @@ class UsersController < ApplicationController
 
   end
 
+  def list
+    respond_to do |format|
+      format.json {
+        users = User.all.order_by([:created_at, :desc])
+
+        render json: users
+      }
+    end
+
+  end
+
 end

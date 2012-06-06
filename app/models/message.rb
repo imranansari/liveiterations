@@ -4,6 +4,7 @@ class Message
 
   field :id
   field :text
+  field :projectId
 
   embeds_many :tags
 

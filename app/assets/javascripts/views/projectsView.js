@@ -16,7 +16,6 @@ define([
             this.collection.bind('add', this.addOne);
         },
         render:function () {
-            //$(this.el).html(this.template());
             this.addAll();
             return this;
         },
@@ -29,7 +28,6 @@ define([
             $(this.el).prepend(view.el);
             model.bind('remove', view.remove);
         }
-
 
     });
 

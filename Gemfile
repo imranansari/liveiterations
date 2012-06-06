@@ -8,6 +8,8 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 gem 'jquery-rails'
+gem 'redcarpet'
+
 =begin
 if HOST_OS =~ /linux/i
   gem 'therubyracer', '>= 0.9.8'

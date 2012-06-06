@@ -9,7 +9,7 @@ define([
         // Reference to this collection's model.
         model:Message,
 
-        url:'/message'
+        url:'/message?projectId='+PROJECT_ID
 
     });
 

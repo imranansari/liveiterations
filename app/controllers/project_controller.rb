@@ -5,6 +5,14 @@ class ProjectController < ApplicationController
     render :layout => false
   end
 
+  def profile
+    puts "projectId :" + session[:currentProjectId]
+
+    @project = Project.find(session[:currentProjectId])
+
+    render :layout => false
+  end
+
   def new
     respond_to do |format|
       format.json {

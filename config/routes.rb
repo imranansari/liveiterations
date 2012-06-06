@@ -20,6 +20,9 @@ Liveiterations::Application.routes.draw do
 
   get "project/index"
   get "project/components"
+  get "project/profile"
+
+  resources :projects
 
   get "sp/components"
   get "sp/index"
@@ -41,6 +44,8 @@ Liveiterations::Application.routes.draw do
 
   devise_for :users
   resources :users, :only => :show
+
+  match 'users', :to => 'users#list', format: :json, :via => :get
 
 
   # The priority is based upon order of creation:

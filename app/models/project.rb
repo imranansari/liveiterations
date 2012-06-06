@@ -5,6 +5,8 @@ class Project
   field :id
   field :name
   field :desc
+  field :description
+  field :imgFileName
 
   field :status
 

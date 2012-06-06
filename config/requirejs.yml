@@ -2,6 +2,7 @@ paths:
     jquery: "libs/jquery/jquery-min"
     livequery: "libs/jquery/livequery"
     rails: "libs/jquery/rails"
+    shorten: "libs/jquery/jquery.shorten.1.0"
     underscore: "libs/underscore/underscore-min"
     backbone: "libs/backbone/backbone-optamd3-min"
     modelbinding: "libs/backbone/backbone.modelbinding"
@@ -32,4 +33,5 @@ modules:
   - name: "zynga-scroller"
   - name: "zynga-render"
   - name: "text"
+  - name: "shorten"
   - name: "application"

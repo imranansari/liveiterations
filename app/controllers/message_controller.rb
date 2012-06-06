@@ -12,6 +12,7 @@ class MessageController < ApplicationController
       format.json {
         message = JSON.parse(request.body.read)
         newMessage = Message.create(message)
+        #newMessage.userId = current_user.id
 =begin
         newActivity.storyTasks.build(name: "Task1")
         newActivity.storyTasks.build(name: "Task2")
@@ -27,7 +28,14 @@ class MessageController < ApplicationController
 
   def list
     puts "get message api"
-    @messages = Message.all.order_by([:created_at, :asc])
+    puts params["projectId"]
+
+    #@userActivities = UserActivity.where(projectId: params["projectId"]).all.order_by([:boardOrder, :asc])
+
+    #@messages = Message.all.order_by([:created_at, :asc])
+    @messages = Message.where(projectId: params["projectId"]).all.order_by([:created_at, :asc])
+
+
 
     respond_to do |format|
       format.json { render json: @messages }
